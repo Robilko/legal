@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Удаление аккаунта — Список покупок</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #212121;
+      line-height: 1.6;
+    }
+    header {
+      background: #2e7d32;
+      color: #fff;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.5rem; font-weight: 600; }
+    header p  { font-size: 0.9rem; opacity: 0.85; margin-top: 4px; }
+    main {
+      max-width: 680px;
+      margin: 32px auto;
+      padding: 0 16px 48px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2e7d32;
+      margin-bottom: 12px;
+    }
+    .card p { margin-bottom: 12px; font-size: 0.95rem; }
+    .card p:last-child { margin-bottom: 0; }
+    .steps { padding-left: 20px; margin: 12px 0; }
+    .steps li { margin-bottom: 8px; font-size: 0.95rem; }
+    .badge {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #1b5e20;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .email-block {
+      background: #f1f8e9;
+      border-left: 4px solid #66bb6a;
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+    .email-block a {
+      color: #2e7d32;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .email-block a:hover { text-decoration: underline; }
+    .note {
+      font-size: 0.85rem;
+      color: #757575;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9e9e9e;
+      padding-bottom: 24px;
+    }
+    footer a { color: #2e7d32; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Список покупок</h1>
+  <p>Удаление аккаунта и данных</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>Способ 1 — удаление внутри приложения</h2>
+    <p>Самый быстрый способ: все данные удаляются мгновенно.</p>
+    <ol class="steps">
+      <li>Откройте приложение <strong>Список покупок</strong>.</li>
+      <li>На главном экране нажмите значок <strong>⚙ Настройки</strong> (верхний правый угол).</li>
+      <li>Выберите <strong>«Удалить аккаунт»</strong>.</li>
+      <li>Подтвердите удаление в диалоговом окне.</li>
+    </ol>
+    <p class="note">Удаляются: все списки покупок, товары, профиль пользователя и аккаунт Firebase Auth. Действие необратимо.</p>
+  </div>
+
+  <div class="card">
+    <h2>Способ 2 — запрос по электронной почте</h2>
+    <p>Если у вас нет доступа к приложению, отправьте запрос разработчику:</p>
+
+    <div class="email-block">
+      📧 <a href="mailto:sasha.robson@gmail.com?subject=Удаление аккаунта ShopList&body=Прошу удалить мой аккаунт и все связанные данные.%0A%0AEmail аккаунта: ">sasha.robson@gmail.com</a>
+    </div>
+
+    <p><strong>Тема письма:</strong> <span class="badge">Удаление аккаунта ShopList</span></p>
+    <p>В письме укажите email-адрес вашего аккаунта. Запрос будет выполнен в течение <strong>30 дней</strong>.</p>
+
+    <p class="note">Что будет удалено: email, имя пользователя, все списки покупок и товары в них. Резервных копий не создаётся.</p>
+  </div>
+
+  <div class="card">
+    <h2>Удаление только данных (без аккаунта)</h2>
+    <p>Если вы хотите удалить только данные (списки и товары), но сохранить аккаунт — напишите об этом в письме или свяжитесь по адресу выше. Мы удалим содержимое, оставив возможность войти снова.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">← Политика конфиденциальности</a>
+    &nbsp;·&nbsp;
+    © 2024 Робилко Александр Александрович
+  </p>
+</footer>
+
+</body>
+</html>
