@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Политика конфиденциальности приложения BasketSnap: какие данные обрабатываются, зачем, кому передаются и как долго хранятся.">
+  <title>Политика конфиденциальности — BasketSnap</title>
+  <link rel="alternate" hreflang="ru" href="./">
+  <link rel="alternate" hreflang="en" href="en/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cg fill='%23e57915' stroke='%23e57915' stroke-width='1'%3E%3Cpath d='M104.53,44.69c-1.66,-3.97 -4.01,-7.25 -7.08,-9.8c-10.61,-8.79 -30.29,-7.33 -36.21,-6.65C31.51,49.86 10.08,82.22 2.68,119.57C21.57,83.51 58.87,55.72 104.53,44.69z'/%3E%3Cpath d='M141.9,0c-21.12,0.93 -41.11,6.28 -59.07,15.16c7.63,1.1 16.02,3.77 23.03,9.57c5.42,4.5 9.35,10.29 11.78,17.29c7.89,-1.31 15.99,-2.12 24.26,-2.41V0z'/%3E%3Cpath d='M220.13,278.72c1.59,-0.77 40.15,-25.36 25.5,-82.48c-4.16,-16.23 -16.12,-30.47 -28.5,-45.62c-18.84,-23.05 -40.19,-49.17 -40.73,-88.28c-0.04,-2.56 0.07,-5.02 0.28,-7.39c-7.03,-1.14 -14.24,-1.86 -21.59,-2.13V297C178.59,295.97 200.14,288.41 220.13,278.72z'/%3E%3Cpath d='M155.1,0v39.62c8.26,0.28 16.36,1.1 24.26,2.41c2.43,-7 6.36,-12.79 11.78,-17.29c7,-5.81 15.4,-8.47 23.03,-9.57C196.21,6.28 176.22,0.93 155.1,0z'/%3E%3Cpath d='M2.22,175.03c2.41,26.92 16.72,50.74 33.68,70.42c-3.04,-13.31 -3.3,-30.63 2.73,-52.69c5.16,-18.85 17.72,-34.22 31.01,-50.49c18.33,-22.42 37.28,-45.61 37.75,-80.11c0.02,-1.58 -0.01,-3.11 -0.11,-4.58C46.77,72.3 -2.67,120.56 2.22,175.03z'/%3E%3Cpath d='M235.6,28.11c-7.2,-0.71 -25.98,-1.61 -36.09,6.81c-3.05,2.54 -5.39,5.8 -7.04,9.76c45.66,11.04 82.95,38.82 101.85,74.89C286.91,82.15 265.41,49.74 235.6,28.11z'/%3E%3Cpath d='M294.78,175.03c4.89,-54.47 -44.55,-102.73 -105.08,-117.45c-0.09,1.47 -0.13,3 -0.11,4.58c0.47,34.5 19.43,57.69 37.75,80.11c13.3,16.27 25.85,31.63 31.01,50.49c6.04,22.06 5.78,39.38 2.73,52.69C278.06,225.77 292.37,201.95 294.78,175.03z'/%3E%3Cpath d='M75.76,278.72c20.05,9.57 42.64,17.25 66.14,18.28V52.81c-7.35,0.27 -14.56,0.99 -21.59,2.13c0.21,2.37 0.31,4.83 0.28,7.39c-0.54,39.11 -21.89,65.23 -40.73,88.28c-12.38,15.15 -24.27,29.41 -28.5,45.62C35.87,255.55 75.37,278.53 75.76,278.72z'/%3E%3C/g%3E%3C/svg%3E">
+  <style>
+    /* Шрифты приложения лежат рядом со страницей: страница не обращается к другим сайтам. Лицензия SIL OFL 1.1. */
+    @font-face {
+      font-family: "Oswald";
+      src: url("fonts/oswald.woff2") format("woff2");
+      font-weight: 200 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Onest";
+      src: url("fonts/onest.woff2") format("woff2");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    /* Цвета — токены BasketSnap Scoreboard (tokens.json): светлая тема. */
+    :root {
+      --ground: #F3F0EA;
+      --surface: #FFFFFF;
+      --surface-2: #ECE7DF;
+      --line: #E2DCD2;
+      --ink: #17140F;
+      --ink-2: #655E55;
+      --hero: #17140F;
+      --hero-ink: #F3F0EA;
+      --hero-ink-2: #B6AEA3;
+      --hero-track: #2A2621;
+      --display: "Oswald", "Arial Narrow", sans-serif;
+      --text: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    /* Тёмная тема — по настройке системы. */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ground: #11100E;
+        --surface: #1B1916;
+        --surface-2: #26231F;
+        --line: #2F2B26;
+        --ink: #F5F0E8;
+        --ink-2: #A69D92;
+        --hero: #26231F;
+        --hero-ink: #F5F0E8;
+        --hero-ink-2: #A69D92;
+        --hero-track: #34302A;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-wrap: break-word;
+    }
+    .page { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+
+    a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-2); text-underline-offset: 3px; }
+    a:hover { text-decoration-color: var(--ink); }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+
+    /* Шапка — как у экранов приложения: мяч и заголовок Oswald ВЕРХНИМ РЕГИСТРОМ. */
+    .top { display: flex; align-items: center; gap: 10px; padding: 12px 4px 16px; }
+    .top svg { width: 30px; height: 30px; flex-shrink: 0; }
+    .top h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    .bar { display: flex; justify-content: space-between; gap: 16px; padding: 14px 4px 0; font-size: 14px; font-weight: 500; }
+    .bar a { color: var(--ink-2); }
+
+    /* Витринная карточка на hero — как профиль игрока в приложении. */
+    .hero { background: var(--hero); color: var(--hero-ink); border-radius: 22px; padding: 20px; }
+    .hero .app {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 32px;
+      line-height: 34px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    .hero .sub { margin: 4px 0 0; color: var(--hero-ink-2); font-size: 14px; }
+    .hero code { color: var(--hero-ink-2); }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+    .facts div { flex: 1 1 140px; background: var(--hero-track); border-radius: 14px; padding: 10px 12px; }
+    .facts dt { color: var(--hero-ink-2); font-size: 12px; line-height: 16px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .facts dd { margin: 2px 0 0; font-weight: 600; }
+
+    h2 {
+      margin: 32px 4px 10px;
+      font-family: var(--display);
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    h3 { margin: 0 0 6px; font-size: 16px; line-height: 1.4; font-weight: 600; }
+    .card { background: var(--surface); border-radius: 18px; padding: 16px; }
+    .card + .card, .card + h3, .card + .note { margin-top: 12px; }
+    .card > :first-child { margin-top: 0; }
+    .card > :last-child { margin-bottom: 0; }
+    p { margin: 0 0 10px; }
+    ul { margin: 0 0 10px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+    .muted { color: var(--ink-2); }
+    .note { margin: 12px 4px 0; color: var(--ink-2); font-size: 14px; }
+    code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em; overflow-wrap: anywhere; }
+
+    /* Строки списка — как ListRow приложения: название и подпись, разделитель line. */
+    .rows { list-style: none; margin: 0; padding: 0; }
+    .rows li { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .rows li:first-child { padding-top: 0; }
+    .rows li:last-child { padding-bottom: 0; border-bottom: 0; }
+    .rows b { display: block; font-weight: 600; }
+    .rows span { display: block; color: var(--ink-2); font-size: 15px; }
+
+    /* Поток данных: подпись слева, значение справа; на узком экране — подпись над значением. */
+    .flow dl { margin: 0; }
+    .flow dl div { display: grid; grid-template-columns: 110px 1fr; gap: 2px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .flow dt { color: var(--ink-2); font-size: 14px; }
+    .flow dd { margin: 0; }
+    @media (max-width: 480px) {
+      .flow dl div { grid-template-columns: 1fr; }
+    }
+
+    .toc { margin: 0; padding-left: 24px; }
+    .toc li { margin-bottom: 4px; }
+    .contact { font-size: 17px; }
+    footer { margin-top: 40px; padding: 0 4px; color: var(--ink-2); font-size: 14px; }
+    footer p { margin-bottom: 6px; }
+    footer a { color: var(--ink-2); }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="bar" aria-label="Навигация">
+    <a href="../">← Все документы</a>
+    <a class="lang" href="en/" hreflang="en" lang="en">English</a>
+  </nav>
+
+  <header class="top">
+    <svg viewBox="0 0 500 500" aria-hidden="true" focusable="false"><g transform="translate(100 100)" fill="#e57915" stroke="#e57915" stroke-width="1"><path d="M104.53,44.69c-1.66,-3.97 -4.01,-7.25 -7.08,-9.8c-10.61,-8.79 -30.29,-7.33 -36.21,-6.65C31.51,49.86 10.08,82.22 2.68,119.57C21.57,83.51 58.87,55.72 104.53,44.69z"/><path d="M141.9,0c-21.12,0.93 -41.11,6.28 -59.07,15.16c7.63,1.1 16.02,3.77 23.03,9.57c5.42,4.5 9.35,10.29 11.78,17.29c7.89,-1.31 15.99,-2.12 24.26,-2.41V0z"/><path d="M220.13,278.72c1.59,-0.77 40.15,-25.36 25.5,-82.48c-4.16,-16.23 -16.12,-30.47 -28.5,-45.62c-18.84,-23.05 -40.19,-49.17 -40.73,-88.28c-0.04,-2.56 0.07,-5.02 0.28,-7.39c-7.03,-1.14 -14.24,-1.86 -21.59,-2.13V297C178.59,295.97 200.14,288.41 220.13,278.72z"/><path d="M155.1,0v39.62c8.26,0.28 16.36,1.1 24.26,2.41c2.43,-7 6.36,-12.79 11.78,-17.29c7,-5.81 15.4,-8.47 23.03,-9.57C196.21,6.28 176.22,0.93 155.1,0z"/><path d="M2.22,175.03c2.41,26.92 16.72,50.74 33.68,70.42c-3.04,-13.31 -3.3,-30.63 2.73,-52.69c5.16,-18.85 17.72,-34.22 31.01,-50.49c18.33,-22.42 37.28,-45.61 37.75,-80.11c0.02,-1.58 -0.01,-3.11 -0.11,-4.58C46.77,72.3 -2.67,120.56 2.22,175.03z"/><path d="M235.6,28.11c-7.2,-0.71 -25.98,-1.61 -36.09,6.81c-3.05,2.54 -5.39,5.8 -7.04,9.76c45.66,11.04 82.95,38.82 101.85,74.89C286.91,82.15 265.41,49.74 235.6,28.11z"/><path d="M294.78,175.03c4.89,-54.47 -44.55,-102.73 -105.08,-117.45c-0.09,1.47 -0.13,3 -0.11,4.58c0.47,34.5 19.43,57.69 37.75,80.11c13.3,16.27 25.85,31.63 31.01,50.49c6.04,22.06 5.78,39.38 2.73,52.69C278.06,225.77 292.37,201.95 294.78,175.03z"/><path d="M75.76,278.72c20.05,9.57 42.64,17.25 66.14,18.28V52.81c-7.35,0.27 -14.56,0.99 -21.59,2.13c0.21,2.37 0.31,4.83 0.28,7.39c-0.54,39.11 -21.89,65.23 -40.73,88.28c-12.38,15.15 -24.27,29.41 -28.5,45.62C35.87,255.55 75.37,278.53 75.76,278.72z"/></g></svg>
+    <h1>Политика конфиденциальности</h1>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="О документе">
+      <p class="app">BasketSnap</p>
+      <p class="sub">Приложение для Android · <code>ru.robilko.basket_snap</code></p>
+      <dl class="facts">
+        <div><dt>Действует с</dt><dd>26 сентября 2026 г.</dd></div>
+        <div><dt>Обновлена</dt><dd>26 сентября 2026 г.</dd></div>
+      </dl>
+    </section>
+
+    <h2 id="short">Коротко</h2>
+    <div class="card">
+      <ul>
+        <li>В BasketSnap нет регистрации, аккаунтов, рекламы, аналитики и платежей. Приложение не определяет, где вы находитесь.</li>
+        <li>Чтобы показать матчи, Приложение обращается к API-Basketball и загружает логотипы. Эти сервисы видят IP-адрес устройства, а API-Basketball — ещё и текст поиска.</li>
+        <li>Настройки, избранное и напоминания хранятся только на вашем устройстве.</li>
+        <li>Firebase (Google) отдаёт Приложению его настройки и справочник названий, Tracer (VK) получает отчёты о сбоях. Для этого им передаются технические данные устройства и Приложения.</li>
+        <li>Письмо разработчику вы отправляете сами — в нём ваш адрес и то, что вы написали.</li>
+        <li>Вопросы и запросы — на <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>.</li>
+      </ul>
+    </div>
+
+    <nav aria-labelledby="toc">
+      <h2 id="toc">Содержание</h2>
+      <div class="card">
+        <ol class="toc">
+        <li><a href="#s1">Общие положения</a></li>
+        <li><a href="#s2">Какие данные обрабатываются</a></li>
+        <li><a href="#s3">Цели и основания обработки</a></li>
+        <li><a href="#s4">Передача данных третьим лицам</a></li>
+        <li><a href="#s5">Внешние ссылки и «Поделиться»</a></li>
+        <li><a href="#s6">Хранение и удаление данных</a></li>
+        <li><a href="#s7">Права пользователей</a></li>
+        <li><a href="#s8">Несовершеннолетние пользователи</a></li>
+        <li><a href="#s9">Безопасность</a></li>
+        <li><a href="#s10">Уведомления</a></li>
+        <li><a href="#s11">Изменения в Политике</a></li>
+        <li><a href="#s12">Контактная информация</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <h2 id="s1">1. Общие положения</h2>
+    <div class="card">
+      <p>Эта Политика описывает, какие данные обрабатывает мобильное приложение <strong>BasketSnap</strong> для Android (идентификатор <code>ru.robilko.basket_snap</code>, далее — «Приложение»), зачем, кому они передаются и как долго хранятся. Приложение показывает расписание, результаты и статистику баскетбольных лиг, команд и игроков.</p>
+      <p>Оператор персональных данных и разработчик Приложения:</p>
+      <p><strong>Робилко Александр Александрович</strong>, самозанятый (плательщик налога на профессиональный доход), г. Москва, Российская Федерация.<br>Электронная почта: <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a></p>
+      <p>Политика действует для Приложения из Google Play, RuStore и Huawei AppGallery. Регистрация в Приложении не нужна, аккаунтов в нём нет. Пользуясь Приложением, вы подтверждаете, что ознакомились с Политикой; если вы с ней не согласны, удалите Приложение.</p>
+    </div>
+
+    <h2 id="s2">2. Какие данные обрабатываются</h2>
+
+    <div class="card">
+      <h3>2.1. Данные, которые вы передаёте сами</h3>
+      <ul>
+        <li><strong>Письмо разработчику.</strong> Пункт «Написать на email» открывает ваше почтовое приложение с адресом и темой; отправляете письмо вы. Разработчик получает ваш адрес, текст письма и вложения, если вы их добавите.</li>
+        <li><strong>Отчёт об ошибке.</strong> На экране ошибки кнопка «Отправить отчёт» подставляет в письмо сведения об ошибке, производителя и модель устройства, версию Android и версию Приложения. Вы видите этот текст и можете изменить его до отправки.</li>
+        <li><strong>Чат в Telegram.</strong> Сообщения в чате BasketSnap обрабатывает Telegram по своим правилам.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>2.2. Данные, которые передаются автоматически</h3>
+      <p class="muted">Приложение не связывает эти данные с вашей личностью и не отправляет их разработчику.</p>
+    </div>
+
+    <div class="card flow">
+      <h3>Запросы к API-Basketball</h3>
+      <dl>
+        <div><dt>Что</dt><dd>IP-адрес устройства; параметры запроса — лига, команда, сезон, игрок или матч; часовой пояс устройства (для списка матчей на выбранный день в Матч-центре); текст поиска.</dd></div>
+        <div><dt>Поиск</dt><dd>Запрос уходит, только когда вы нажимаете «Поиск» на клавиатуре. Русский текст Приложение сначала ищет в своём справочнике названий, а если не находит — переводит в латиницу: в API уходит латинский вариант.</dd></div>
+        <div><dt>Кому</dt><dd>API-SPORTS — сервис API-Basketball (<code>v1.basketball.api-sports.io</code>).</dd></div>
+        <div><dt>Зачем</dt><dd>Получить расписание, результаты, составы и статистику.</dd></div>
+      </dl>
+    </div>
+
+    <div class="card flow">
+      <h3>Картинки: логотипы и флаги</h3>
+      <dl>
+        <div><dt>Что</dt><dd>IP-адрес устройства и обычные сведения запроса браузера, например User-Agent.</dd></div>
+        <div><dt>Кому</dt><dd>CDN-сервис ООО «СДН-видео» (CDNvideo): через него загружаются логотипы и флаги API-Basketball и часть логотипов справочника. Остальные логотипы справочника — с сайтов лиг, клубов и других источников (например, infobasket.su, russiabasket.ru, baskethotel.com, web.archive.org).</dd></div>
+        <div><dt>Зачем</dt><dd>Показать логотипы команд и лиг и флаги стран, в том числе в уведомлении о матче.</dd></div>
+      </dl>
+    </div>
+
+    <div class="card flow">
+      <h3>Firebase (Google)</h3>
+      <dl>
+        <div><dt>Что</dt><dd>Идентификатор установки Firebase — случайный, создаётся при первом запуске и не связан с вашей личностью; язык и регион устройства; часовой пояс; версии Android и Приложения; имя пакета; IP-адрес.</dd></div>
+        <div><dt>Кому</dt><dd>Google LLC — сервисы Firebase Installations, Remote Config и Cloud Firestore.</dd></div>
+        <div><dt>Зачем</dt><dd>Remote Config передаёт Приложению его настройки — например, что вышла новая версия. Из Cloud Firestore Приложение читает справочник русских названий и логотипов лиг и команд. Записей в Firestore Приложение не делает, поисковые запросы туда не уходят.</dd></div>
+      </dl>
+    </div>
+
+    <div class="card flow">
+      <h3>Отчёты о сбоях (Tracer)</h3>
+      <dl>
+        <div><dt>Что</dt><dd>При сбое или зависании — технический отчёт: где в коде произошла ошибка, модель устройства, версия Android и Приложения, тип сети. При нехватке памяти — снимок памяти Приложения; по документации Tracer он очищается от содержимого перед отправкой. Размер папок Приложения, если он превысил порог. Статистика сеансов без сбоев. Сведения о некритичных ошибках сети — без адресов запросов и текста поиска. Tracer хранит в Приложении свой случайный идентификатор установки.</dd></div>
+        <div><dt>Кому</dt><dd>ООО «ВК» — сервис Tracer. Данные хранятся в России.</dd></div>
+        <div><dt>Зачем</dt><dd>Находить и исправлять ошибки Приложения.</dd></div>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h3>2.3. Данные только на вашем устройстве</h3>
+      <ul>
+        <li>Настройки: тема, «Скрывать счёт сегодняшних игр», фильтры Матч-центра.</li>
+        <li>Избранные лиги и команды — для фильтра «Избранное».</li>
+        <li>Напоминания о матчах: матч, команды, лига и адреса логотипов.</li>
+        <li>Кэш: ответы API (до 100 записей, от 5 минут до суток; в них есть текст поиска), логотипы и флаги (до 250 МБ), справочник стран, копия справочника названий.</li>
+        <li>Идентификаторы установки Firebase и Tracer.</li>
+      </ul>
+      <p>Эти данные разработчику не отправляются. Если на устройстве включено резервное копирование Android, система может сохранить настройки, избранное, справочники и идентификаторы установки в вашем аккаунте Google; кэш ответов API в копию не попадает. Резервной копией управляете вы в настройках Android, разработчик к ней доступа не имеет.</p>
+    </div>
+
+    <div class="card">
+      <h3>2.4. Что Приложение не собирает</h3>
+      <ul>
+        <li>Геолокацию.</li>
+        <li>Контакты, фото, файлы, доступ к камере и микрофону.</li>
+        <li>Рекламный идентификатор — рекламы в Приложении нет.</li>
+        <li>Аналитику: какие экраны вы открываете и что нажимаете.</li>
+        <li>Платёжные данные — платежей в Приложении нет, поддержка проекта проходит на сайте ЮMoney.</li>
+        <li>Данные для входа — регистрации нет.</li>
+      </ul>
+    </div>
+
+    <h2 id="s3">3. Цели и основания обработки</h2>
+    <div class="card">
+      <ul class="rows">
+        <li><b>Показ расписания, результатов и статистики</b><span>Запросы к API-Basketball и загрузка картинок. Основание — исполнение договора: вы пользуетесь Приложением на условиях магазина, из которого его установили (п. 5 ч. 1 ст. 6 Федерального закона № 152‑ФЗ).</span></li>
+        <li><b>Настройки Приложения и справочник названий</b><span>Firebase. Основание — законный интерес оператора поддерживать работу Приложения (п. 7 ч. 1 ст. 6 152‑ФЗ).</span></li>
+        <li><b>Исправление ошибок</b><span>Tracer. Основание — законный интерес оператора (п. 7 ч. 1 ст. 6 152‑ФЗ).</span></li>
+        <li><b>Ответы на обращения</b><span>Ваше письмо. Основание — согласие, которое вы даёте, когда пишете разработчику (п. 1 ч. 1 ст. 6 152‑ФЗ).</span></li>
+      </ul>
+    </div>
+    <p class="note">Данные не продаются, не используются для рекламы и не объединяются с другими сведениями о вас.</p>
+
+    <h2 id="s4">4. Передача данных третьим лицам</h2>
+    <div class="card">
+      <ul class="rows">
+        <li><b>API-SPORTS</b><span>Данные о матчах. <a href="https://api-sports.io/privacy" rel="noopener noreferrer">Политика конфиденциальности</a></span></li>
+        <li><b>ООО «СДН-видео» (CDNvideo), Россия</b><span>Доставка логотипов и флагов. <a href="https://www.cdnvideo.ru/dokumentatsiya/obrabotka-personalnyh-dannyh/" rel="noopener noreferrer">Обработка персональных данных</a></span></li>
+        <li><b>Google LLC, США</b><span>Firebase Installations, Remote Config, Cloud Firestore. <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Конфиденциальность Firebase</a> (на английском), <a href="https://policies.google.com/privacy?hl=ru" rel="noopener noreferrer">Политика конфиденциальности Google</a></span></li>
+        <li><b>ООО «ВК», Россия</b><span>Tracer — отчёты о сбоях. <a href="https://apptracer.ru/privacy/" rel="noopener noreferrer">Политика конфиденциальности Tracer</a></span></li>
+        <li><b>Сайты — источники логотипов</b><span>Сайты лиг, клубов и архивы, адреса которых указаны в справочнике названий. Действуют правила этих сайтов.</span></li>
+      </ul>
+    </div>
+    <p class="note">Google и API-SPORTS — зарубежные сервисы: при обращении к ним IP-адрес и технические данные передаются за пределы России. Разработчик не передаёт данные другим лицам и может раскрыть их только по требованию закона.</p>
+
+    <h2 id="s5">5. Внешние ссылки и «Поделиться»</h2>
+    <div class="card">
+      <p>Часть функций открывает другие приложения и сайты. Там действуют их правила:</p>
+      <ul class="rows">
+        <li><b>Письмо разработчику</b><span>Ваше почтовое приложение. Ящик разработчика — Яндекс Почта: <a href="https://yandex.ru/legal/confidential/" rel="noopener noreferrer">политика конфиденциальности Яндекса</a>.</span></li>
+        <li><b>Чат в Telegram</b><span><a href="https://telegram.org/privacy?setln=ru" rel="noopener noreferrer">Политика конфиденциальности Telegram</a></span></li>
+        <li><b>Поддержать проект</b><span>Страница ЮMoney, ООО НКО «ЮМани». <a href="https://yoomoney.ru/document/politika-konfidencialnosti-ooo-nko-yoomoney" rel="noopener noreferrer">Политика конфиденциальности ЮMoney</a></span></li>
+        <li><b>Обновление Приложения</b><span>Страница Приложения в магазине: <a href="https://policies.google.com/privacy?hl=ru" rel="noopener noreferrer">Google Play</a>, <a href="https://www.rustore.ru/help/legal/privacy-policy-users" rel="noopener noreferrer">RuStore</a>, <a href="https://privacy.consumer.huawei.com/legal/hiapp/privacy-statement.htm?code=RU&amp;branchid=2&amp;language=ru_RU" rel="noopener noreferrer">Huawei AppGallery</a>.</span></li>
+        <li><b>«Поделиться» в карточке матча</b><span>Текст — команды, счёт, лига, время и ссылка на Приложение в магазине — уходит в приложение, которое вы выберете.</span></li>
+        <li><b>Эта страница</b><span>Размещена на GitHub Pages: GitHub записывает IP-адреса посетителей в целях безопасности. <a href="https://docs.github.com/ru/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">Заявление о конфиденциальности GitHub</a></span></li>
+      </ul>
+    </div>
+
+    <h2 id="s6">6. Хранение и удаление данных</h2>
+    <div class="card">
+      <ul>
+        <li><strong>На устройстве</strong> — пока установлено Приложение. «Очистить кэш» в настройках удаляет сохранённые ответы API и картинки. Все данные Приложения удаляются вместе с ним или в настройках Android: «Приложения → BasketSnap → Хранилище → Очистить данные». Избранное убирает звёздочка, напоминание — повторное нажатие на колокольчик.</li>
+        <li><strong>Firebase</strong> — сроки хранения определяет Google, см. <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>.</li>
+        <li><strong>Tracer</strong> — события о сбоях хранятся 90 дней, по документации Tracer.</li>
+        <li><strong>API-SPORTS, CDNvideo и сайты — источники логотипов</strong> — по их правилам.</li>
+        <li><strong>Переписка с разработчиком</strong> хранится в почтовом ящике без ограничения срока. По вашей просьбе разработчик удалит её.</li>
+        <li><strong>Резервная копия Android</strong> хранится в вашем аккаунте Google, управляете ею вы.</li>
+      </ul>
+    </div>
+
+    <h2 id="s7">7. Права пользователей</h2>
+    <div class="card">
+      <p>По Федеральному закону № 152‑ФЗ «О персональных данных» вы вправе:</p>
+      <ul>
+        <li>получить сведения о том, какие ваши данные обрабатываются;</li>
+        <li>потребовать уточнить, заблокировать или удалить данные, если они неполные, устаревшие, неточные или обрабатываются незаконно;</li>
+        <li>отозвать согласие — например, попросить удалить переписку;</li>
+        <li>обжаловать действия оператора в Роскомнадзоре (<a href="https://rkn.gov.ru/" rel="noopener noreferrer">rkn.gov.ru</a>) или в суде.</li>
+      </ul>
+      <p>Запросы направляйте на <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>. Срок ответа — 10 рабочих дней.</p>
+      <p class="muted">Технические данные, которые получают сервисы из раздела 4, не связаны с вашей личностью, и разработчик не может найти их по вашему запросу. Данные на устройстве вы можете удалить сами — см. раздел 6.</p>
+    </div>
+
+    <h2 id="s8">8. Несовершеннолетние пользователи</h2>
+    <div class="card">
+      <p>Приложение не предназначено специально для детей и не участвует в программе Google Play «Для семей». Возрастная маркировка: 3+ в Google Play и Huawei AppGallery, 0+ в RuStore.</p>
+      <p>Приложение не собирает намеренно персональные данные детей: регистрации нет, а технические данные, которые получают сервисы, не связаны с личностью. Если ребёнок младше 14 лет написал разработчику без согласия родителей, родитель или законный представитель может попросить удалить переписку — на <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>.</p>
+    </div>
+
+    <h2 id="s9">9. Безопасность</h2>
+    <div class="card">
+      <ul>
+        <li>Приложение обращается к API-Basketball, Firebase и Tracer по HTTPS; картинки тоже загружаются по HTTPS — адреса без шифрования Android не открывает.</li>
+        <li>Данные на устройстве лежат в папке Приложения, закрытой от других приложений.</li>
+        <li>Журналы с содержимым запросов пишутся только в отладочных сборках, в опубликованных версиях их нет.</li>
+        <li>Ни один способ передачи и хранения данных не защищён полностью.</li>
+      </ul>
+    </div>
+
+    <h2 id="s10">10. Уведомления</h2>
+    <div class="card">
+      <p>Приложение показывает только напоминания о матчах, которые вы поставили сами колокольчиком, — за 10 минут до начала. Напоминание работает на устройстве, без сервера; рекламных и push-рассылок нет. На Android 13 и новее Приложение спросит разрешение на уведомления, когда вы поставите первое напоминание.</p>
+      <p>Отключить уведомления можно повторным нажатием на колокольчик или в настройках Android: «Приложения → BasketSnap → Уведомления».</p>
+    </div>
+
+    <h2 id="s11">11. Изменения в Политике</h2>
+    <div class="card">
+      <p>Новая редакция Политики публикуется по этому адресу, дата изменения указывается в начале страницы. Актуальная версия всегда доступна по адресу <a href="https://robilko.github.io/legal/basketsnap/">robilko.github.io/legal/basketsnap</a>.</p>
+    </div>
+
+    <h2 id="s12">12. Контактная информация</h2>
+    <div class="card contact">
+      <p><strong>Разработчик:</strong> Робилко Александр Александрович, самозанятый<br>
+      <strong>Email:</strong> <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a><br>
+      <strong>Срок ответа:</strong> 10 рабочих дней</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Политика составлена с учётом требований Федерального закона от 27.07.2006 № 152‑ФЗ «О персональных данных». При расхождении русской и <a href="en/" hreflang="en">английской версии</a> действует русская.</p>
+    <p>Шрифты Oswald и Onest — лицензия SIL Open Font License 1.1: <a href="fonts/Oswald-OFL.txt">Oswald</a>, <a href="fonts/Onest-OFL.txt">Onest</a>.</p>
+    <p><a href="../">Все документы</a> · © 2026 Робилко Александр Александрович</p>
+  </footer>
+
+</div>
+</body>
+</html>
