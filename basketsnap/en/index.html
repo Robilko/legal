@@ -172,15 +172,15 @@
       <p class="sub">Android app · <code>ru.robilko.basket_snap</code></p>
       <dl class="facts">
         <div><dt>Effective from</dt><dd>September 26, 2026</dd></div>
-        <div><dt>Last updated</dt><dd>September 27, 2026</dd></div>
+        <div><dt>Last updated</dt><dd>October 2, 2026</dd></div>
       </dl>
     </section>
 
     <h2 id="short">In short</h2>
     <div class="card">
       <ul>
-        <li>BasketSnap has no sign-up, accounts, ads, analytics or payments. The App does not determine where you are.</li>
-        <li>To show games, the App calls API-Basketball and downloads logos. These services see your device's IP address, and API-Basketball also sees your search text.</li>
+        <li>BasketSnap has no sign-up, accounts, ads, analytics or payments. The App does not request your location.</li>
+        <li>To show games, the App calls API-Basketball and downloads logos. These services see your device's IP address, and API-Basketball also sees your search text. In Russia, API-Basketball requests go through the developer's server. API-Basketball then sees the server's address instead of your device's; the server itself stores neither IP addresses nor request contents.</li>
         <li>Settings, favourites and reminders stay on your device.</li>
         <li>Firebase (Google) provides the App's settings and a names directory, and Tracer (VK) receives crash reports. For this, they get technical data about the device and the App.</li>
         <li>You send emails to the developer yourself — they contain your address and what you wrote.</li>
@@ -229,7 +229,7 @@
 
     <div class="card">
       <h3>2.2. Data sent automatically</h3>
-      <p class="muted">The App does not link this data to your identity and does not send it to the developer.</p>
+      <p class="muted">The App does not link this data to your identity. The developer receives it only when API-Basketball requests go through the developer's server, which stores neither IP addresses nor request parameters.</p>
     </div>
 
     <div class="card flow">
@@ -238,7 +238,18 @@
         <div><dt>What</dt><dd>Your device's IP address; request parameters — league, team, season, player or game; the device time zone (for the list of games on the selected day in Match Center and for updating live games on a league screen); search text.</dd></div>
         <div><dt>Search</dt><dd>A search is sent only when you tap “Search” on the keyboard. The App first looks up Russian text in its names directory and, if nothing is found, transliterates it: the API receives the Latin version.</dd></div>
         <div><dt>Recipient</dt><dd>API-SPORTS — the API-Basketball service (<code>v1.basketball.api-sports.io</code>).</dd></div>
+        <div><dt>Route</dt><dd>Directly or through the developer's server (see below). The route depends on the country of the mobile network, or on the time zone if there is no SIM card: in Russia requests go through the server, in other countries — directly. If one route does not respond, the App tries the other. The App determines the country on the device and does not send it anywhere; the developer can change the order of routes in the App's remote settings.</dd></div>
         <div><dt>Purpose</dt><dd>To get schedules, results, rosters and statistics.</dd></div>
+      </dl>
+    </div>
+
+    <div class="card flow">
+      <h3>The developer's server</h3>
+      <dl>
+        <div><dt>What</dt><dd>API-Basketball requests that go through the server: your device's IP address and the request parameters listed above.</dd></div>
+        <div><dt>Where</dt><dd>The developer's server <code>api.basket-snap.ru</code> in a data centre of Selectel JSC, Russia.</dd></div>
+        <div><dt>Purpose</dt><dd>To load data where the direct connection to API-Basketball works poorly, for example in Russia. The server forwards the request to API-SPORTS and returns the response to the App.</dd></div>
+        <div><dt>Retention</dt><dd>IP addresses and request parameters are not stored. The server log — time, API section, response code, size and time — is kept for 7 days.</dd></div>
       </dl>
     </div>
 
@@ -296,7 +307,7 @@
     <h2 id="s3">3. Purposes and legal grounds</h2>
     <div class="card">
       <ul class="rows">
-        <li><b>Showing schedules, results and statistics</b><span>API-Basketball requests and image downloads. Ground: performance of a contract — you use the App under the terms of the store you installed it from (Article 6(1)(5) of Federal Law No. 152‑FZ).</span></li>
+        <li><b>Showing schedules, results and statistics</b><span>API-Basketball requests — directly or through the developer's server — and image downloads. Ground: performance of a contract — you use the App under the terms of the store you installed it from (Article 6(1)(5) of Federal Law No. 152‑FZ).</span></li>
         <li><b>App settings and the names directory</b><span>Firebase. Ground: the operator's legitimate interest in keeping the App working (Article 6(1)(7) of Law No. 152‑FZ).</span></li>
         <li><b>Fixing errors</b><span>Tracer. Ground: the operator's legitimate interest (Article 6(1)(7) of Law No. 152‑FZ).</span></li>
         <li><b>Answering your messages</b><span>Your email. Ground: the consent you give by writing to the developer (Article 6(1)(1) of Law No. 152‑FZ).</span></li>
@@ -308,13 +319,14 @@
     <div class="card">
       <ul class="rows">
         <li><b>API-SPORTS</b><span>Game data. <a href="https://api-sports.io/privacy" rel="noopener noreferrer">Privacy policy</a></span></li>
+        <li><b>Selectel JSC, Russia</b><span>Hosting of the developer's server that forwards API-Basketball requests. <a href="https://files.selectel.ru/docs/en/personal-data-processing-and-protection-policy.pdf" rel="noopener noreferrer">Personal data processing and protection policy</a></span></li>
         <li><b>CDN-video LLC (CDNvideo), Russia</b><span>Delivery of logos and flags. <a href="https://www.cdnvideo.ru/dokumentatsiya/obrabotka-personalnyh-dannyh/" rel="noopener noreferrer">Personal data processing</a> (in Russian)</span></li>
         <li><b>Google LLC, USA</b><span>Firebase Installations, Remote Config, Cloud Firestore. <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>, <a href="https://policies.google.com/privacy?hl=en" rel="noopener noreferrer">Google Privacy Policy</a></span></li>
         <li><b>VK LLC, Russia</b><span>Tracer — crash reports. <a href="https://apptracer.ru/privacy/" rel="noopener noreferrer">Tracer privacy policy</a> (in Russian)</span></li>
         <li><b>Websites that host logos</b><span>League and club websites and archives listed in the names directory. Their own rules apply.</span></li>
       </ul>
     </div>
-    <p class="note">Google and API-SPORTS are foreign services: when the App contacts them, the IP address and technical data are transferred outside Russia. The developer does not share data with anyone else and may disclose it only when required by law.</p>
+    <p class="note">Google and API-SPORTS are foreign services: when the App contacts them, the IP address and technical data are transferred outside Russia. API-Basketball requests that go through the developer's server reach API-SPORTS from the server's address, without your device's IP address. The developer does not share data with anyone else and may disclose it only when required by law.</p>
 
     <h2 id="s5">5. External links and sharing</h2>
     <div class="card">
@@ -335,7 +347,8 @@
         <li><strong>On your device</strong> — while the App is installed. “Clear cache” in Settings deletes stored API responses and images. All App data is deleted together with the App or in Android settings: “Apps → BasketSnap → Storage → Clear storage”. Tap the star to remove a favourite and the bell again to remove a reminder.</li>
         <li><strong>Firebase</strong> — retention is set by Google, see <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>.</li>
         <li><strong>Tracer</strong> — crash events are kept for 90 days, according to the Tracer documentation.</li>
-        <li><strong>API-SPORTS, CDNvideo and logo websites</strong> — under their own rules.</li>
+        <li><strong>The developer's server</strong> does not store IP addresses or request parameters; its log without them is kept for 7 days.</li>
+        <li><strong>API-SPORTS, Selectel, CDNvideo and logo websites</strong> — under their own rules.</li>
         <li><strong>Correspondence with the developer</strong> is kept in the mailbox with no time limit. The developer will delete it at your request.</li>
         <li><strong>Android backup</strong> is kept in your Google account and managed by you.</li>
       </ul>
@@ -363,7 +376,7 @@
     <h2 id="s9">9. Security</h2>
     <div class="card">
       <ul>
-        <li>The App contacts API-Basketball, Firebase and Tracer over HTTPS; images are loaded over HTTPS too — Android does not open unencrypted addresses.</li>
+        <li>The App contacts API-Basketball (directly and through the developer's server), Firebase and Tracer over HTTPS; images are loaded over HTTPS too — Android does not open unencrypted addresses.</li>
         <li>Data on your device is kept in the App's folder, which other apps cannot access.</li>
         <li>Logs with request contents are written only in debug builds, never in published versions.</li>
         <li>No method of transmitting or storing data is completely secure.</li>
