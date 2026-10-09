@@ -172,7 +172,7 @@
       <p class="sub">Android app · <code>ru.robilko.basket_snap</code></p>
       <dl class="facts">
         <div><dt>Effective from</dt><dd>September 26, 2026</dd></div>
-        <div><dt>Last updated</dt><dd>October 2, 2026</dd></div>
+        <div><dt>Last updated</dt><dd>October 9, 2026</dd></div>
       </dl>
     </section>
 
@@ -181,7 +181,8 @@
       <ul>
         <li>BasketSnap has no sign-up, accounts, ads, analytics or payments. The App does not request your location.</li>
         <li>To show games, the App calls API-Basketball and downloads logos. These services see your device's IP address, and API-Basketball also sees your search text. In Russia, API-Basketball requests go through the developer's server. API-Basketball then sees the server's address instead of your device's; the server itself stores neither IP addresses nor request contents.</li>
-        <li>Settings, favourites and reminders stay on your device.</li>
+        <li>The widget and game notifications work on your device, with no notification server. To stay current, the App itself, without being opened, asks API-Basketball for the day's games: for the widget once a day at night and when you tap “Refresh”, for notifications only for teams whose bell you have turned on.</li>
+        <li>Settings, favourites, reminders and quiz results stay on your device.</li>
         <li>Firebase (Google) provides the App's settings and a names directory, and Tracer (VK) receives crash reports. For this, they get technical data about the device and the App.</li>
         <li>You send emails to the developer yourself — they contain your address and what you wrote.</li>
         <li>Questions and requests: <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>.</li>
@@ -235,11 +236,21 @@
     <div class="card flow">
       <h3>API-Basketball requests</h3>
       <dl>
-        <div><dt>What</dt><dd>Your device's IP address; request parameters — league, team, season, player or game; the device time zone (for the list of games on the selected day in Match Center and for updating live games on a league screen); search text.</dd></div>
+        <div><dt>What</dt><dd>Your device's IP address; request parameters — league, team, season, player or game; the device time zone (for the list of games on the selected day in Match Center, for updating live games on a league screen and for the widget and notifications); search text.</dd></div>
         <div><dt>Search</dt><dd>A search is sent only when you tap “Search” on the keyboard. The App first looks up Russian text in its names directory and, if nothing is found, transliterates it: the API receives the Latin version.</dd></div>
         <div><dt>Recipient</dt><dd>API-SPORTS — the API-Basketball service (<code>v1.basketball.api-sports.io</code>).</dd></div>
         <div><dt>Route</dt><dd>Directly or through the developer's server (see below). The route depends on the country of the mobile network, or on the time zone if there is no SIM card: in Russia requests go through the server, in other countries — directly. If one route does not respond, the App tries the other. The App determines the country on the device and does not send it anywhere; the developer can change the order of routes in the App's remote settings.</dd></div>
         <div><dt>Purpose</dt><dd>To get schedules, results, rosters and statistics.</dd></div>
+      </dl>
+    </div>
+
+    <div class="card flow">
+      <h3>Requests without opening the App: widget and notifications</h3>
+      <dl>
+        <div><dt>What</dt><dd>The same API-Basketball requests as described above: your device's IP address and time zone. A request carries only the date and the time zone — the day's games in a single request for all favourites; your favourite teams and leagues are not sent, the App picks them out on the device.</dd></div>
+        <div><dt>When</dt><dd>The widget — once a day at night, when the App starts if the widget's data is not from today, and when you tap “Refresh” in the widget. Notifications — only if a favourite team's bell is on: the schedule for today and tomorrow every 12 hours and, after a game starts, its result until the final score arrives. The number of such requests per day is limited.</dd></div>
+        <div><dt>Purpose</dt><dd>To show the day's games in the widget and to send a start reminder and the final score without a notification server.</dd></div>
+        <div><dt>Turning off</dt><dd>Remove the widget from the home screen; turn off a team's bell or the switches in the App's settings (“Notifications”).</dd></div>
       </dl>
     </div>
 
@@ -286,10 +297,14 @@
         <li>Settings: theme, “Hide today's game scores”, Match Center filters.</li>
         <li>Favourite leagues and teams — for the “Favourites” filter.</li>
         <li>Game reminders: game, teams, league and logo addresses.</li>
+        <li>Team notifications: which favourite teams have the bell turned on, the schedule of upcoming notifications and which ones have already been shown.</li>
+        <li>Widget: a snapshot of the day's games — all games of the day from the API response, with your favourites picked out when it is shown: time, teams, league, score, logo addresses — and the time of the last update.</li>
+        <li>Quiz: personal statistics (record, number of rounds played, answers and correct answers, best streak), the history of the last 20 rounds — league, season, chosen team and player, level, result and finish time — and the last “Custom round” choice: the league with its logo address, season and level.</li>
+        <li>Service data: a counter of background requests for the day, which limits usage.</li>
         <li>Cache: API responses (up to 100 entries, from 5 minutes to a day; they contain search text), logos and flags (up to 250 MB), the countries directory, a copy of the names directory.</li>
         <li>Firebase and Tracer installation IDs.</li>
       </ul>
-      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, favourites, directories and installation IDs to your Google account; the API response cache is excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
+      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, favourites, quiz data, directories and installation IDs to your Google account; the API response cache, the widget snapshot and the data of pending notifications are excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
     </div>
 
     <div class="card">
@@ -307,7 +322,7 @@
     <h2 id="s3">3. Purposes and legal grounds</h2>
     <div class="card">
       <ul class="rows">
-        <li><b>Showing schedules, results and statistics</b><span>API-Basketball requests — directly or through the developer's server — and image downloads. Ground: performance of a contract — you use the App under the terms of the store you installed it from (Article 6(1)(5) of Federal Law No. 152‑FZ).</span></li>
+        <li><b>Showing schedules, results and statistics, including in the widget and notifications</b><span>API-Basketball requests — directly or through the developer's server — and image downloads. Ground: performance of a contract — you use the App under the terms of the store you installed it from (Article 6(1)(5) of Federal Law No. 152‑FZ).</span></li>
         <li><b>App settings and the names directory</b><span>Firebase. Ground: the operator's legitimate interest in keeping the App working (Article 6(1)(7) of Law No. 152‑FZ).</span></li>
         <li><b>Fixing errors</b><span>Tracer. Ground: the operator's legitimate interest (Article 6(1)(7) of Law No. 152‑FZ).</span></li>
         <li><b>Answering your messages</b><span>Your email. Ground: the consent you give by writing to the developer (Article 6(1)(1) of Law No. 152‑FZ).</span></li>
@@ -336,7 +351,7 @@
         <li><b>Telegram chat</b><span><a href="https://telegram.org/privacy" rel="noopener noreferrer">Telegram Privacy Policy</a></span></li>
         <li><b>Support the project</b><span>YooMoney page, YooMoney NCO LLC. <a href="https://yoomoney.ru/document/politika-konfidencialnosti-ooo-nko-yoomoney" rel="noopener noreferrer">YooMoney privacy policy</a> (in Russian)</span></li>
         <li><b>App updates</b><span>The App page in the store: <a href="https://policies.google.com/privacy?hl=en" rel="noopener noreferrer">Google Play</a>, <a href="https://www.rustore.ru/help/legal/privacy-policy-users" rel="noopener noreferrer">RuStore</a> (in Russian), <a href="https://privacy.consumer.huawei.com/legal/hiapp/privacy-statement.htm?code=RU&amp;branchid=2&amp;language=en_US" rel="noopener noreferrer">Huawei AppGallery</a>.</span></li>
-        <li><b>Sharing a game</b><span>The text — teams, score, league, time and a store link to the App — goes to the app you choose.</span></li>
+        <li><b>Sharing a game</b><span>The text — teams, score, league, time and a store link to the App — goes to the app you choose. If you send the game card as an image, the App draws it on your device and keeps the file in a temporary cache (files older than a day are deleted the next time an image is shared, and “Clear cache” deletes them at once); the app you choose gets permission to read that one file only.</span></li>
         <li><b>This page</b><span>Hosted on GitHub Pages: GitHub logs visitors' IP addresses for security purposes. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub General Privacy Statement</a></span></li>
       </ul>
     </div>
@@ -344,7 +359,7 @@
     <h2 id="s6">6. Retention and deletion</h2>
     <div class="card">
       <ul>
-        <li><strong>On your device</strong> — while the App is installed. “Clear cache” in Settings deletes stored API responses and images. All App data is deleted together with the App or in Android settings: “Apps → BasketSnap → Storage → Clear storage”. Tap the star to remove a favourite and the bell again to remove a reminder.</li>
+        <li><strong>On your device</strong> — while the App is installed. “Clear cache” in Settings deletes stored API responses and images. All App data is deleted together with the App or in Android settings: “Apps → BasketSnap → Storage → Clear storage”. Tap the star to remove a favourite and the bell again to remove a reminder or a team's notifications; remove the widget from the home screen to stop its nightly requests.</li>
         <li><strong>Firebase</strong> — retention is set by Google, see <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>.</li>
         <li><strong>Tracer</strong> — crash events are kept for 90 days, according to the Tracer documentation.</li>
         <li><strong>The developer's server</strong> does not store IP addresses or request parameters; its log without them is kept for 7 days.</li>
@@ -385,8 +400,13 @@
 
     <h2 id="s10">10. Notifications</h2>
     <div class="card">
-      <p>The App only shows game reminders you set yourself with the bell — 10 minutes before the start. Reminders work on your device without a server; there are no advertising or push campaigns. On Android 13 and later, the App asks for notification permission when you set your first reminder.</p>
-      <p>You can turn notifications off by tapping the bell again or in Android settings: “Apps → BasketSnap → Notifications”.</p>
+      <p>The App only shows notifications about games that you turned on yourself with the bell; there are no advertising or push campaigns:</p>
+      <ul>
+        <li><b>Reminder</b> — 10 minutes before a game starts: the bell on a game or on a favourite team.</li>
+        <li><b>Final score</b> — a few minutes after a game ends, only for favourite teams with the bell on. If “Hide today's game scores” is on in Settings, the notification does not show the score.</li>
+      </ul>
+      <p>Notifications work on your device; there is no notification server. To know when a team's games start and how they end, the App itself, without being opened, asks API-Basketball for the schedule for today and tomorrow (every 12 hours) and, after a game starts, for its result (see section 2.2). On Android 13 and later, the App asks for notification permission when you first turn on a bell.</p>
+      <p>You can turn notifications off by tapping the bell again, with the switches in the App's settings (“Notifications”) or in Android settings: “Apps → BasketSnap → Notifications”.</p>
     </div>
 
     <h2 id="s11">11. Changes to this Policy</h2>
