@@ -172,7 +172,7 @@
       <p class="sub">Android app · <code>ru.robilko.basket_snap</code></p>
       <dl class="facts">
         <div><dt>Effective from</dt><dd>September 26, 2026</dd></div>
-        <div><dt>Last updated</dt><dd>October 9, 2026</dd></div>
+        <div><dt>Last updated</dt><dd>October 12, 2026</dd></div>
       </dl>
     </section>
 
@@ -182,7 +182,7 @@
         <li>BasketSnap has no sign-up, accounts, ads, analytics or payments. The App does not request your location.</li>
         <li>To show games, the App calls API-Basketball and downloads logos. These services see your device's IP address, and API-Basketball also sees your search text. In Russia, API-Basketball requests go through the developer's server. API-Basketball then sees the server's address instead of your device's; the server itself stores neither IP addresses nor request contents.</li>
         <li>The widget and game notifications work on your device, with no notification server. To stay current, the App itself, without being opened, asks API-Basketball for the day's games: for the widget once a day at night and when you tap “Refresh”, for notifications only for teams whose bell you have turned on.</li>
-        <li>Settings, favourites, reminders and quiz results stay on your device.</li>
+        <li>Settings, favourites, reminders and quiz results stay on your device. The App saves a copy of your settings, favourites and quiz data to a file only if you choose that file yourself; the copy is not sent to the developer.</li>
         <li>Firebase (Google) provides the App's settings and a names directory, and Tracer (VK) receives crash reports. For this, they get technical data about the device and the App.</li>
         <li>You send emails to the developer yourself — they contain your address and what you wrote.</li>
         <li>Questions and requests: <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>.</li>
@@ -285,14 +285,14 @@
     <div class="card flow">
       <h3>Crash reports (Tracer)</h3>
       <dl>
-        <div><dt>What</dt><dd>On a crash or freeze — a technical report: where in the code the error occurred, device model, Android and App versions, network type. On running out of memory — a memory snapshot of the App, which Tracer, according to its documentation, clears of content before sending. The size of the App's folders if it exceeds a threshold. Statistics of crash-free sessions. Details of non-critical network errors — without request addresses or search text. Tracer keeps its own random installation ID in the App.</dd></div>
+        <div><dt>What</dt><dd>On a crash or freeze — a technical report: where in the code the error occurred, device model, Android and App versions, network type. On running out of memory — a memory snapshot of the App, which Tracer, according to its documentation, clears of content before sending. The size of the App's folders if it exceeds a threshold. Statistics of crash-free sessions. Details of non-critical network errors — without request addresses or search text. Backup file errors — only the error type and the place in the code, without the file's address or contents. Tracer keeps its own random installation ID in the App.</dd></div>
         <div><dt>Recipient</dt><dd>VK LLC — the Tracer service. Data is stored in Russia.</dd></div>
         <div><dt>Purpose</dt><dd>To find and fix errors in the App.</dd></div>
       </dl>
     </div>
 
     <div class="card">
-      <h3>2.3. Data kept only on your device</h3>
+      <h3>2.3. Data kept on your device</h3>
       <ul>
         <li>Settings: theme, “Hide today's game scores”, Match Center filters.</li>
         <li>Favourite leagues and teams — for the “Favourites” filter.</li>
@@ -304,14 +304,15 @@
         <li>Cache: API responses (up to 100 entries, from 5 minutes to a day; they contain search text), logos and flags (up to 250 MB), the countries directory, a copy of the names directory.</li>
         <li>Firebase and Tracer installation IDs.</li>
       </ul>
-      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, favourites, quiz data, directories and installation IDs to your Google account; the API response cache, the widget snapshot and the data of pending notifications are excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
+      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, favourites, quiz data, directories and installation IDs to your Google account; the API response cache, the widget snapshot, the data of pending notifications and the auto-save setting are excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
+      <p><strong>Backup to a file.</strong> In “Settings → Backup”, at your command, the App saves the settings, language, favourite leagues and teams with their bells and quiz data to a file you choose yourself — in phone storage or a cloud folder; the file has no cache, directories or installation IDs. With “Auto-save” on, the App overwrites this file once a day when you open it and keeps the file's address and the time of the last save on your device. “Restore from file” reads only the file you pick. The file is not sent to the developer.</p>
     </div>
 
     <div class="card">
       <h3>2.4. What the App does not collect</h3>
       <ul>
         <li>Location.</li>
-        <li>Contacts, photos, files, camera or microphone access.</li>
+        <li>Contacts, photos, camera or microphone access. The App does not read files on your device, except the backup file you pick to restore.</li>
         <li>Advertising ID — there are no ads in the App.</li>
         <li>Analytics: which screens you open and what you tap.</li>
         <li>Payment data — there are no payments in the App; support for the project goes through the YooMoney website.</li>
@@ -360,6 +361,7 @@
     <div class="card">
       <ul>
         <li><strong>On your device</strong> — while the App is installed. “Clear cache” in Settings deletes stored API responses and images. All App data is deleted together with the App or in Android settings: “Apps → BasketSnap → Storage → Clear storage”. Tap the star to remove a favourite and the bell again to remove a reminder or a team's notifications; remove the widget from the home screen to stop its nightly requests.</li>
+        <li><strong>The backup file</strong> stays where you saved it and is not deleted together with the App — delete it in your file manager or cloud. Turning off “Auto-save” stops writing and revokes the App's access to the file.</li>
         <li><strong>Firebase</strong> — retention is set by Google, see <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>.</li>
         <li><strong>Tracer</strong> — crash events are kept for 90 days, according to the Tracer documentation.</li>
         <li><strong>The developer's server</strong> does not store IP addresses or request parameters; its log without them is kept for 7 days.</li>
@@ -392,7 +394,7 @@
     <div class="card">
       <ul>
         <li>The App contacts API-Basketball (directly and through the developer's server), Firebase and Tracer over HTTPS; images are loaded over HTTPS too — Android does not open unencrypted addresses.</li>
-        <li>Data on your device is kept in the App's folder, which other apps cannot access.</li>
+        <li>Data on your device is kept in the App's folder, which other apps cannot access. The backup file stays where you saved it, and apps with access to that folder can read it; it contains no passwords or keys — only settings, favourites and quiz data.</li>
         <li>Logs with request contents are written only in debug builds, never in published versions.</li>
         <li>No method of transmitting or storing data is completely secure.</li>
       </ul>
