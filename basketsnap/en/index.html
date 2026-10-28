@@ -172,7 +172,7 @@
       <p class="sub">Android app · <code>ru.robilko.basket_snap</code></p>
       <dl class="facts">
         <div><dt>Effective from</dt><dd>September 26, 2026</dd></div>
-        <div><dt>Last updated</dt><dd>October 27, 2026</dd></div>
+        <div><dt>Last updated</dt><dd>October 28, 2026</dd></div>
       </dl>
     </section>
 
@@ -184,6 +184,7 @@
         <li>The widget and game notifications work on your device, with no notification server. To stay current, the App itself, without being opened, asks API-Basketball for the day's games: for the widget once a day at night and when you tap “Refresh”, for notifications only for teams whose bell you have turned on.</li>
         <li>Settings, favourites, reminders and quiz results stay on your device. The App saves a copy of your settings, favourites and quiz data to a file only if you choose that file yourself; the copy is not sent to the developer.</li>
         <li>Firebase (Google) provides the App's settings and a names directory, and Tracer (VK) receives crash reports. For this, they get technical data about the device and the App.</li>
+        <li>To offer a new version, the App asks the store you installed it from — Google Play, RuStore or Huawei AppGallery — when you open it. The store receives the App's name and version and technical data about the device, and the RuStore and Huawei SDKs also send statistics on their own operation. The store itself downloads and installs the update.</li>
         <li>In lists of games, competitions and standings the App may show ads from the Yandex Advertising Network and VK Ads. Their SDKs receive the device advertising ID, the IP address and technical data about the device and the App. In the European Economic Area, the UK and Switzerland ads are shown without personalization.</li>
         <li>You send emails to the developer yourself — they contain your address and what you wrote.</li>
         <li>Questions and requests: <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>.</li>
@@ -279,7 +280,7 @@
       <dl>
         <div><dt>What</dt><dd>The Firebase installation ID — random, created on first launch and not linked to your identity; device language and region; time zone; Android and App versions; package name; IP address.</dd></div>
         <div><dt>Recipient</dt><dd>Google LLC — Firebase Installations, Remote Config and Cloud Firestore.</dd></div>
-        <div><dt>Purpose</dt><dd>Remote Config provides the App's settings — for example, that a new version is out. From Cloud Firestore the App reads a directory of Russian names and logos of leagues and teams. The App never writes to Firestore, and search queries are not sent there.</dd></div>
+        <div><dt>Purpose</dt><dd>Remote Config provides the App's settings — for example, the minimum version below which the App asks you to update. From Cloud Firestore the App reads a directory of Russian names and logos of leagues and teams. The App never writes to Firestore, and search queries are not sent there.</dd></div>
       </dl>
     </div>
 
@@ -289,6 +290,17 @@
         <div><dt>What</dt><dd>On a crash or freeze — a technical report: where in the code the error occurred, device model, Android and App versions, network type. On running out of memory — a memory snapshot of the App, which Tracer, according to its documentation, clears of content before sending. The size of the App's folders if it exceeds a threshold. Statistics of crash-free sessions. Details of non-critical network errors — without request addresses or search text. Backup file errors — only the error type and the place in the code, without the file's address or contents. Tracer keeps its own random installation ID in the App.</dd></div>
         <div><dt>Recipient</dt><dd>VK LLC — the Tracer service. Data is stored in Russia.</dd></div>
         <div><dt>Purpose</dt><dd>To find and fix errors in the App.</dd></div>
+      </dl>
+    </div>
+
+    <div class="card flow">
+      <h3>Update checks (app stores)</h3>
+      <dl>
+        <div><dt>What</dt><dd>The App's package name and installed version, the device's IP address. In the RuStore build, the RuStore SDK also sends RuStore service events about its own operation: the event name, the App's package name and version, a random ID that the SDK creates and keeps in the App's folder, and event parameters. In the Huawei AppGallery build, the HMS Core SDK sends Huawei the technical details needed to pick a version — for example, the model and CPU architecture, screen density, language, service country, EMUI and AppGallery versions, network type and carrier code — and statistics of SDK calls; IMEI, serial number and UDID are turned off in these statistics.</dd></div>
+        <div><dt>Recipient</dt><dd>Only the store you installed the App from: each build contains the SDK of one store. Google Play — Google LLC; RuStore — VK LLC; Huawei AppGallery and HMS Core — Techcompany Huawei LLC.</dd></div>
+        <div><dt>When</dt><dd>When you open the App or return to it, at most once every 15 minutes; the widget and notifications do not start the check. The RuStore SDK may send its service events later, including when the App is closed.</dd></div>
+        <div><dt>How</dt><dd>Google Play and RuStore answer through their apps on the device. The App has no access to your store account. The update window is shown by the store, which also downloads and installs the new version.</dd></div>
+        <div><dt>Purpose</dt><dd>To offer a new version and not leave an outdated one without an update: if the App's version is below the minimum the developer sets in the remote settings, the App asks you to update.</dd></div>
       </dl>
     </div>
 
@@ -314,11 +326,12 @@
         <li>Widget: a snapshot of the day's games — all games of the day from the API response, with your favourites picked out when it is shown: time, teams, league, score, logo addresses — and the time of the last update.</li>
         <li>Quiz: personal statistics (record, number of rounds played, answers and correct answers, best streak), the history of the last 20 rounds — league, season, chosen team and player, level, result and finish time — and the last “Custom round” choice: the league with its logo address, season and level.</li>
         <li>Service data: a counter of background requests for the day, which limits usage.</li>
+        <li>Updates: which version the App last offered to install and when — so it is offered at most once every 3 days. In the RuStore and AppGallery builds, the store's SDK keeps its settings, service identifiers and event queue in the App's folder.</li>
         <li>Cache: API responses (up to 100 entries, from 5 minutes to a day; they contain search text), logos and flags (up to 250 MB), the countries directory, a copy of the names directory.</li>
         <li>Firebase and Tracer installation IDs.</li>
         <li>Ads: the Yandex and VK SDKs keep their settings, service identifiers and temporary ad files in the App's folder.</li>
       </ul>
-      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, favourites, quiz data, directories, installation IDs and the ad SDKs' service data to your Google account; the API response cache, the widget snapshot, the data of pending notifications and the auto-save setting are excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
+      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, language, favourites, quiz data and directories to your Google account. Everything else — the API response cache, the widget snapshot, notification data, the auto-save setting, information about offered updates, installation IDs and third-party SDK data — is excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
       <p><strong>Backup to a file.</strong> In “Settings → Backup”, at your command, the App saves the settings, language, favourite leagues and teams with their bells and quiz data to a file you choose yourself — in phone storage or a cloud folder; the file has no cache, directories or installation IDs. With “Auto-save” on, the App overwrites this file once a day when you open it and keeps the file's address and the time of the last save on your device. “Restore from file” reads only the file you pick. The file is not sent to the developer.</p>
     </div>
 
@@ -327,7 +340,7 @@
       <ul>
         <li>Location.</li>
         <li>Contacts, photos, camera or microphone access. The App does not read files on your device, except the backup file you pick to restore.</li>
-        <li>Analytics: which screens you open and what you tap (the ad SDKs count only impressions of and taps on their own ads).</li>
+        <li>Analytics: which screens you open and what you tap (the ad SDKs count only impressions of and taps on their own ads, and the RuStore and HMS Core SDKs collect statistics on their own operation).</li>
         <li>Payment data — there are no payments in the App; support for the project goes through the YooMoney website.</li>
         <li>Sign-in data — there is no sign-up.</li>
       </ul>
@@ -339,6 +352,7 @@
         <li><b>Showing schedules, results and statistics, including in the widget and notifications</b><span>API-Basketball requests — directly or through the developer's server — and image downloads. Ground: performance of a contract — you use the App under the terms of the store you installed it from (Article 6(1)(5) of Federal Law No. 152‑FZ).</span></li>
         <li><b>App settings and the names directory</b><span>Firebase. Ground: the operator's legitimate interest in keeping the App working (Article 6(1)(7) of Law No. 152‑FZ).</span></li>
         <li><b>Fixing errors</b><span>Tracer. Ground: the operator's legitimate interest (Article 6(1)(7) of Law No. 152‑FZ).</span></li>
+        <li><b>Offering a new version</b><span>Google Play, RuStore or Huawei AppGallery. Ground: the operator's legitimate interest — users get fixes, and an outdated version that has stopped working is not left without an update (Article 6(1)(7) of Law No. 152‑FZ).</span></li>
         <li><b>Showing ads</b><span>The Yandex Advertising Network and VK Ads. Ground: the operator's legitimate interest — ad revenue keeps the App free (Article 6(1)(7) of Law No. 152‑FZ). In the European Economic Area, the UK and Switzerland ads are not personalized.</span></li>
         <li><b>Answering your messages</b><span>Your email. Ground: the consent you give by writing to the developer (Article 6(1)(1) of Law No. 152‑FZ).</span></li>
       </ul>
@@ -351,9 +365,10 @@
         <li><b>API-SPORTS</b><span>Game data. <a href="https://api-sports.io/privacy" rel="noopener noreferrer">Privacy policy</a></span></li>
         <li><b>Selectel JSC, Russia</b><span>Hosting of the developer's server that forwards API-Basketball requests. <a href="https://files.selectel.ru/docs/en/personal-data-processing-and-protection-policy.pdf" rel="noopener noreferrer">Personal data processing and protection policy</a></span></li>
         <li><b>CDN-video LLC (CDNvideo), Russia</b><span>Delivery of logos and flags. <a href="https://www.cdnvideo.ru/dokumentatsiya/obrabotka-personalnyh-dannyh/" rel="noopener noreferrer">Personal data processing</a> (in Russian)</span></li>
-        <li><b>Google LLC, USA</b><span>Firebase Installations, Remote Config, Cloud Firestore. <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>, <a href="https://policies.google.com/privacy?hl=en" rel="noopener noreferrer">Google Privacy Policy</a></span></li>
+        <li><b>Google LLC, USA</b><span>Firebase Installations, Remote Config, Cloud Firestore; Google Play — App update checks. <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>, <a href="https://policies.google.com/privacy?hl=en" rel="noopener noreferrer">Google Privacy Policy</a></span></li>
         <li><b>YANDEX LLC, Russia</b><span>The Yandex Advertising Network — the Yandex Mobile Ads SDK with AppMetrica components, and ad mediation. <a href="https://yandex.com/legal/confidential/" rel="noopener noreferrer">Yandex Privacy Policy</a></span></li>
-        <li><b>VK LLC, Russia</b><span>Tracer — crash reports; VK Ads — ads served through Yandex mediation (the myTarget and myTracker SDKs). <a href="https://apptracer.ru/privacy/" rel="noopener noreferrer">Tracer privacy policy</a> (in Russian), <a href="https://help.mail.ru/legal/terms/adsvk/euprivacy/" rel="noopener noreferrer">VK Ads privacy policy</a>, <a href="https://docs.tracker.my.com/en/privacy" rel="noopener noreferrer">myTracker privacy</a></span></li>
+        <li><b>VK LLC, Russia</b><span>Tracer — crash reports; VK Ads — ads served through Yandex mediation (the myTarget and myTracker SDKs); RuStore — App update checks and RuStore SDK metrics. <a href="https://apptracer.ru/privacy/" rel="noopener noreferrer">Tracer privacy policy</a> (in Russian), <a href="https://help.mail.ru/legal/terms/adsvk/euprivacy/" rel="noopener noreferrer">VK Ads privacy policy</a>, <a href="https://docs.tracker.my.com/en/privacy" rel="noopener noreferrer">myTracker privacy</a>, <a href="https://www.rustore.ru/help/legal/privacy-policy-users" rel="noopener noreferrer">RuStore privacy policy</a> (in Russian)</span></li>
+        <li><b>Techcompany Huawei LLC, Russia</b><span>Huawei AppGallery and HMS Core — update checks for the App installed from AppGallery and statistics of the HMS Core SDK. <a href="https://privacy.consumer.huawei.com/legal/hiapp/privacy-statement.htm?code=RU&amp;branchid=2&amp;language=en_US" rel="noopener noreferrer">Statement About AppGallery and Privacy</a></span></li>
         <li><b>Websites that host logos</b><span>League and club websites and archives listed in the names directory. Their own rules apply.</span></li>
       </ul>
     </div>
@@ -366,7 +381,7 @@
         <li><b>Email to the developer</b><span>Your email app. The developer's mailbox is Yandex Mail: <a href="https://yandex.com/legal/confidential/" rel="noopener noreferrer">Yandex privacy policy</a>.</span></li>
         <li><b>Telegram chat</b><span><a href="https://telegram.org/privacy" rel="noopener noreferrer">Telegram Privacy Policy</a></span></li>
         <li><b>Support the project</b><span>YooMoney page, YooMoney NCO LLC. <a href="https://yoomoney.ru/document/politika-konfidencialnosti-ooo-nko-yoomoney" rel="noopener noreferrer">YooMoney privacy policy</a> (in Russian)</span></li>
-        <li><b>App updates</b><span>The App page in the store: <a href="https://policies.google.com/privacy?hl=en" rel="noopener noreferrer">Google Play</a>, <a href="https://www.rustore.ru/help/legal/privacy-policy-users" rel="noopener noreferrer">RuStore</a> (in Russian), <a href="https://privacy.consumer.huawei.com/legal/hiapp/privacy-statement.htm?code=RU&amp;branchid=2&amp;language=en_US" rel="noopener noreferrer">Huawei AppGallery</a>.</span></li>
+        <li><b>App updates</b><span>The store's update window or the App page in the store (see “Update checks” in section 2.2): <a href="https://policies.google.com/privacy?hl=en" rel="noopener noreferrer">Google Play</a>, <a href="https://www.rustore.ru/help/legal/privacy-policy-users" rel="noopener noreferrer">RuStore</a> (in Russian), <a href="https://privacy.consumer.huawei.com/legal/hiapp/privacy-statement.htm?code=RU&amp;branchid=2&amp;language=en_US" rel="noopener noreferrer">Huawei AppGallery</a>.</span></li>
         <li><b>Sharing a game</b><span>The text — teams, score, league, time and a store link to the App — goes to the app you choose. If you send the game card as an image, the App draws it on your device and keeps the file in a temporary cache (files older than a day are deleted the next time an image is shared, and “Clear cache” deletes them at once); the app you choose gets permission to read that one file only.</span></li>
         <li><b>This page</b><span>Hosted on GitHub Pages: GitHub logs visitors' IP addresses for security purposes. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub General Privacy Statement</a></span></li>
       </ul>
@@ -381,7 +396,7 @@
         <li><strong>Tracer</strong> — crash events are kept for 90 days, according to the Tracer documentation.</li>
         <li><strong>Ads</strong> — retention is set by Yandex and VK under their own rules (section 4). You can reset or delete the advertising ID in Android settings.</li>
         <li><strong>The developer's server</strong> does not store IP addresses or request parameters; its log without them is kept for 7 days.</li>
-        <li><strong>API-SPORTS, Selectel, CDNvideo and logo websites</strong> — under their own rules.</li>
+        <li><strong>API-SPORTS, Selectel, CDNvideo, app stores and logo websites</strong> — under their own rules.</li>
         <li><strong>Correspondence with the developer</strong> is kept in the mailbox with no time limit. The developer will delete it at your request.</li>
         <li><strong>Android backup</strong> is kept in your Google account and managed by you.</li>
       </ul>
@@ -397,7 +412,7 @@
         <li>appeal against the operator's actions to Roskomnadzor (<a href="https://rkn.gov.ru/" rel="noopener noreferrer">rkn.gov.ru</a>, in Russian) or in court.</li>
       </ul>
       <p>Send requests to <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>. Response time: 10 working days.</p>
-      <p class="muted">The technical data received by the services in section 4 is not linked to your identity, so the developer cannot find it by your request. You can delete the data on your device yourself — see section 6. The advertising ID is reset in Android settings; for data received by the ad networks, contact Yandex and VK.</p>
+      <p class="muted">The technical data received by the services in section 4 is not linked to your identity, so the developer cannot find it by your request. You can delete the data on your device yourself — see section 6. The advertising ID is reset in Android settings; for data received by the ad networks, contact Yandex and VK, and for update-check data, the store you installed the App from.</p>
     </div>
 
     <h2 id="s8">8. Children</h2>
@@ -411,6 +426,7 @@
       <ul>
         <li>The App contacts API-Basketball (directly and through the developer's server), Firebase and Tracer over HTTPS; images are loaded over HTTPS too — Android does not open unencrypted addresses.</li>
         <li>Ads are shown in the ad SDK's view inside the App; they have no access to the settings, favourites or other App data. The SDKs exchange data with the ad networks' servers themselves.</li>
+        <li>New versions are downloaded and installed by the store you installed the App from; the App itself does not download or install update files.</li>
         <li>Data on your device is kept in the App's folder, which other apps cannot access. The backup file stays where you saved it, and apps with access to that folder can read it; it contains no passwords or keys — only settings, favourites and quiz data.</li>
         <li>Logs with request contents are written only in debug builds, never in published versions.</li>
         <li>No method of transmitting or storing data is completely secure.</li>
