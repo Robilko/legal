@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="BasketSnap terms of use: licence, game data, odds, quiz and predictions, advertising, supporting the project, liability and consumer rights.">
+  <title>Terms of Use — BasketSnap</title>
+  <link rel="alternate" hreflang="ru" href="../">
+  <link rel="alternate" hreflang="en" href="./">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cg fill='%23e57915' stroke='%23e57915' stroke-width='1'%3E%3Cpath d='M104.53,44.69c-1.66,-3.97 -4.01,-7.25 -7.08,-9.8c-10.61,-8.79 -30.29,-7.33 -36.21,-6.65C31.51,49.86 10.08,82.22 2.68,119.57C21.57,83.51 58.87,55.72 104.53,44.69z'/%3E%3Cpath d='M141.9,0c-21.12,0.93 -41.11,6.28 -59.07,15.16c7.63,1.1 16.02,3.77 23.03,9.57c5.42,4.5 9.35,10.29 11.78,17.29c7.89,-1.31 15.99,-2.12 24.26,-2.41V0z'/%3E%3Cpath d='M220.13,278.72c1.59,-0.77 40.15,-25.36 25.5,-82.48c-4.16,-16.23 -16.12,-30.47 -28.5,-45.62c-18.84,-23.05 -40.19,-49.17 -40.73,-88.28c-0.04,-2.56 0.07,-5.02 0.28,-7.39c-7.03,-1.14 -14.24,-1.86 -21.59,-2.13V297C178.59,295.97 200.14,288.41 220.13,278.72z'/%3E%3Cpath d='M155.1,0v39.62c8.26,0.28 16.36,1.1 24.26,2.41c2.43,-7 6.36,-12.79 11.78,-17.29c7,-5.81 15.4,-8.47 23.03,-9.57C196.21,6.28 176.22,0.93 155.1,0z'/%3E%3Cpath d='M2.22,175.03c2.41,26.92 16.72,50.74 33.68,70.42c-3.04,-13.31 -3.3,-30.63 2.73,-52.69c5.16,-18.85 17.72,-34.22 31.01,-50.49c18.33,-22.42 37.28,-45.61 37.75,-80.11c0.02,-1.58 -0.01,-3.11 -0.11,-4.58C46.77,72.3 -2.67,120.56 2.22,175.03z'/%3E%3Cpath d='M235.6,28.11c-7.2,-0.71 -25.98,-1.61 -36.09,6.81c-3.05,2.54 -5.39,5.8 -7.04,9.76c45.66,11.04 82.95,38.82 101.85,74.89C286.91,82.15 265.41,49.74 235.6,28.11z'/%3E%3Cpath d='M294.78,175.03c4.89,-54.47 -44.55,-102.73 -105.08,-117.45c-0.09,1.47 -0.13,3 -0.11,4.58c0.47,34.5 19.43,57.69 37.75,80.11c13.3,16.27 25.85,31.63 31.01,50.49c6.04,22.06 5.78,39.38 2.73,52.69C278.06,225.77 292.37,201.95 294.78,175.03z'/%3E%3Cpath d='M75.76,278.72c20.05,9.57 42.64,17.25 66.14,18.28V52.81c-7.35,0.27 -14.56,0.99 -21.59,2.13c0.21,2.37 0.31,4.83 0.28,7.39c-0.54,39.11 -21.89,65.23 -40.73,88.28c-12.38,15.15 -24.27,29.41 -28.5,45.62C35.87,255.55 75.37,278.53 75.76,278.72z'/%3E%3C/g%3E%3C/svg%3E">
+  <style>
+    /* Шрифты приложения лежат рядом со страницей: страница не обращается к другим сайтам. Лицензия SIL OFL 1.1. */
+    @font-face {
+      font-family: "Oswald";
+      src: url("../../fonts/oswald.woff2") format("woff2");
+      font-weight: 200 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Onest";
+      src: url("../../fonts/onest.woff2") format("woff2");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    /* Цвета — токены BasketSnap Scoreboard (tokens.json): светлая тема. */
+    :root {
+      --ground: #F3F0EA;
+      --surface: #FFFFFF;
+      --surface-2: #ECE7DF;
+      --line: #E2DCD2;
+      --ink: #17140F;
+      --ink-2: #655E55;
+      --hero: #17140F;
+      --hero-ink: #F3F0EA;
+      --hero-ink-2: #B6AEA3;
+      --hero-track: #2A2621;
+      --display: "Oswald", "Arial Narrow", sans-serif;
+      --text: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    /* Тёмная тема — по настройке системы. */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ground: #11100E;
+        --surface: #1B1916;
+        --surface-2: #26231F;
+        --line: #2F2B26;
+        --ink: #F5F0E8;
+        --ink-2: #A69D92;
+        --hero: #26231F;
+        --hero-ink: #F5F0E8;
+        --hero-ink-2: #A69D92;
+        --hero-track: #34302A;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-wrap: break-word;
+    }
+    .page { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+
+    a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-2); text-underline-offset: 3px; }
+    a:hover { text-decoration-color: var(--ink); }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+
+    /* Шапка — как у экранов приложения: мяч и заголовок Oswald ВЕРХНИМ РЕГИСТРОМ. */
+    .top { display: flex; align-items: center; gap: 10px; padding: 12px 4px 16px; }
+    .top svg { width: 30px; height: 30px; flex-shrink: 0; }
+    .top h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    .bar { display: flex; justify-content: flex-end; padding: 14px 4px 0; font-size: 14px; font-weight: 500; }
+    .bar a { color: var(--ink-2); }
+
+    /* Витринная карточка на hero — как профиль игрока в приложении. */
+    .hero { background: var(--hero); color: var(--hero-ink); border-radius: 22px; padding: 20px; }
+    .hero .app {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 32px;
+      line-height: 34px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    .hero .sub { margin: 4px 0 0; color: var(--hero-ink-2); font-size: 14px; }
+    .hero code { color: var(--hero-ink-2); }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+    .facts div { flex: 1 1 140px; background: var(--hero-track); border-radius: 14px; padding: 10px 12px; }
+    .facts dt { color: var(--hero-ink-2); font-size: 12px; line-height: 16px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .facts dd { margin: 2px 0 0; font-weight: 600; }
+
+    h2 {
+      margin: 32px 4px 10px;
+      font-family: var(--display);
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    h3 { margin: 0 0 6px; font-size: 16px; line-height: 1.4; font-weight: 600; }
+    .card { background: var(--surface); border-radius: 18px; padding: 16px; }
+    .card + .card, .card + h3, .card + .note { margin-top: 12px; }
+    .card > :first-child { margin-top: 0; }
+    .card > :last-child { margin-bottom: 0; }
+    p { margin: 0 0 10px; }
+    ul { margin: 0 0 10px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+    .muted { color: var(--ink-2); }
+    .note { margin: 12px 4px 0; color: var(--ink-2); font-size: 14px; }
+    code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em; overflow-wrap: anywhere; }
+
+    /* Строки списка — как ListRow приложения: название и подпись, разделитель line. */
+    .rows { list-style: none; margin: 0; padding: 0; }
+    .rows li { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .rows li:first-child { padding-top: 0; }
+    .rows li:last-child { padding-bottom: 0; border-bottom: 0; }
+    .rows b { display: block; font-weight: 600; }
+    .rows span { display: block; color: var(--ink-2); font-size: 15px; }
+
+    /* Поток данных: подпись слева, значение справа; на узком экране — подпись над значением. */
+    .flow dl { margin: 0; }
+    .flow dl div { display: grid; grid-template-columns: 110px 1fr; gap: 2px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .flow dt { color: var(--ink-2); font-size: 14px; }
+    .flow dd { margin: 0; }
+    @media (max-width: 480px) {
+      .flow dl div { grid-template-columns: 1fr; }
+    }
+
+    .toc { margin: 0; padding-left: 24px; }
+    .toc li { margin-bottom: 4px; }
+    .contact { font-size: 17px; }
+    footer { margin-top: 40px; padding: 0 4px; color: var(--ink-2); font-size: 14px; }
+    footer p { margin-bottom: 6px; }
+    footer a { color: var(--ink-2); }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="bar" aria-label="Language">
+    <a class="lang" href="../" hreflang="ru" lang="ru">Русский</a>
+  </nav>
+
+  <header class="top">
+    <svg viewBox="0 0 500 500" aria-hidden="true" focusable="false"><g transform="translate(100 100)" fill="#e57915" stroke="#e57915" stroke-width="1"><path d="M104.53,44.69c-1.66,-3.97 -4.01,-7.25 -7.08,-9.8c-10.61,-8.79 -30.29,-7.33 -36.21,-6.65C31.51,49.86 10.08,82.22 2.68,119.57C21.57,83.51 58.87,55.72 104.53,44.69z"/><path d="M141.9,0c-21.12,0.93 -41.11,6.28 -59.07,15.16c7.63,1.1 16.02,3.77 23.03,9.57c5.42,4.5 9.35,10.29 11.78,17.29c7.89,-1.31 15.99,-2.12 24.26,-2.41V0z"/><path d="M220.13,278.72c1.59,-0.77 40.15,-25.36 25.5,-82.48c-4.16,-16.23 -16.12,-30.47 -28.5,-45.62c-18.84,-23.05 -40.19,-49.17 -40.73,-88.28c-0.04,-2.56 0.07,-5.02 0.28,-7.39c-7.03,-1.14 -14.24,-1.86 -21.59,-2.13V297C178.59,295.97 200.14,288.41 220.13,278.72z"/><path d="M155.1,0v39.62c8.26,0.28 16.36,1.1 24.26,2.41c2.43,-7 6.36,-12.79 11.78,-17.29c7,-5.81 15.4,-8.47 23.03,-9.57C196.21,6.28 176.22,0.93 155.1,0z"/><path d="M2.22,175.03c2.41,26.92 16.72,50.74 33.68,70.42c-3.04,-13.31 -3.3,-30.63 2.73,-52.69c5.16,-18.85 17.72,-34.22 31.01,-50.49c18.33,-22.42 37.28,-45.61 37.75,-80.11c0.02,-1.58 -0.01,-3.11 -0.11,-4.58C46.77,72.3 -2.67,120.56 2.22,175.03z"/><path d="M235.6,28.11c-7.2,-0.71 -25.98,-1.61 -36.09,6.81c-3.05,2.54 -5.39,5.8 -7.04,9.76c45.66,11.04 82.95,38.82 101.85,74.89C286.91,82.15 265.41,49.74 235.6,28.11z"/><path d="M294.78,175.03c4.89,-54.47 -44.55,-102.73 -105.08,-117.45c-0.09,1.47 -0.13,3 -0.11,4.58c0.47,34.5 19.43,57.69 37.75,80.11c13.3,16.27 25.85,31.63 31.01,50.49c6.04,22.06 5.78,39.38 2.73,52.69C278.06,225.77 292.37,201.95 294.78,175.03z"/><path d="M75.76,278.72c20.05,9.57 42.64,17.25 66.14,18.28V52.81c-7.35,0.27 -14.56,0.99 -21.59,2.13c0.21,2.37 0.31,4.83 0.28,7.39c-0.54,39.11 -21.89,65.23 -40.73,88.28c-12.38,15.15 -24.27,29.41 -28.5,45.62C35.87,255.55 75.37,278.53 75.76,278.72z"/></g></svg>
+    <h1>Terms of Use</h1>
+  </header>
+  <main>
+    <section class="hero" aria-label="About this document">
+      <p class="app">BasketSnap</p>
+      <p class="sub">Android app · <code>ru.robilko.basket_snap</code></p>
+      <dl class="facts">
+        <div><dt>Effective from</dt><dd>November 9, 2026</dd></div>
+        <div><dt>Last updated</dt><dd>November 9, 2026</dd></div>
+      </dl>
+    </section>
+
+    <h2 id="short">In short</h2>
+    <div class="card">
+      <ul>
+        <li>BasketSnap is free: there are no paid features, subscriptions or purchases. There is no sign-up or account either — just install the App from Google Play, RuStore or Huawei AppGallery.</li>
+        <li>Schedules, results and statistics come from API-Basketball, a third-party service. The data may be delayed or contain errors. The App is not affiliated with the leagues, clubs or federations whose games it shows.</li>
+        <li>Odds to win, where shown, are reference information from bookmakers. The App does not take bets and does not advise you to place any.</li>
+        <li>The quiz and game predictions are a game for virtual points and titles. There is no money, no prizes and no entry fee; the points are worth nothing and cannot be exchanged for anything.</li>
+        <li>The App may show ads in its lists. You can support the project with a voluntary transfer — it is not a purchase and unlocks no extra features.</li>
+        <li>The developer may update the App, change or disable features, and stop supporting outdated versions. The App is provided “as is”, but your statutory consumer rights remain intact.</li>
+        <li>What data the App processes is described in the <a href="../../en/">Privacy Policy</a>. Questions: <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>.</li>
+      </ul>
+    </div>
+
+    <nav aria-labelledby="toc">
+      <h2 id="toc">Contents</h2>
+      <div class="card">
+        <ol class="toc">
+        <li><a href="#s1">General</a></li>
+        <li><a href="#s2">What the App does</a></li>
+        <li><a href="#s3">Licence and rules of use</a></li>
+        <li><a href="#s4">Game data, logos and links</a></li>
+        <li><a href="#s5">Odds to win</a></li>
+        <li><a href="#s6">Quiz and predictions</a></li>
+        <li><a href="#s7">Advertising</a></li>
+        <li><a href="#s8">Supporting the project</a></li>
+        <li><a href="#s9">Updates, remote settings and data</a></li>
+        <li><a href="#s10">Warranties and liability</a></li>
+        <li><a href="#s11">Consumers in the EEA and the UK</a></li>
+        <li><a href="#s12">Ending your use</a></li>
+        <li><a href="#s13">Governing law and disputes</a></li>
+        <li><a href="#s14">Changes to these Terms</a></li>
+        <li><a href="#s15">Contact</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <h2 id="s1">1. General</h2>
+    <div class="card">
+      <p>These Terms of Use (the “Terms”) are an agreement between you and the developer of the <strong>BasketSnap</strong> mobile app for Android (package <code>ru.robilko.basket_snap</code>, the “App”). They set out on what basis you may use the App, what it does and what each party is responsible for.</p>
+      <p>Developer and rights holder of the App:</p>
+      <p><strong>Aleksandr Aleksandrovich Robilko</strong>, self-employed (professional income tax payer), Moscow, Russian Federation (the “Developer”).<br>Email: <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a></p>
+      <p>The Terms apply to the App from Google Play, RuStore and Huawei AppGallery. By installing, opening or using the App you accept the Terms — a licence agreement concluded in the simplified manner provided for in Article 1286(5) of the Civil Code of the Russian Federation. If you do not agree with the Terms, do not use the App and uninstall it.</p>
+      <p>The rules of the store you installed the App from apply alongside the Terms: the <a href="https://play.google.com/about/play-terms/" rel="noopener noreferrer">Google Play Terms of Service</a>, or the RuStore or AppGallery user agreement. Under its own rules, the store is responsible for downloading, installing and updating the App; the Developer is responsible for the App itself. What data the App processes, why and who receives it is described in the <a href="../../en/">Privacy Policy</a>.</p>
+      <p>If you are a minor, use the App with the consent of your parents or legal guardians. Age ratings: 3+ on Google Play and Huawei AppGallery, 12+ on RuStore.</p>
+    </div>
+
+    <h2 id="s2">2. What the App does</h2>
+    <div class="card">
+      <p>BasketSnap shows schedules, results, statistics and standings of basketball leagues, teams and players around the world. The App is free: it has no paid features, subscriptions, in-app purchases or sign-up.</p>
+      <ul class="rows">
+        <li><b>Games, leagues, teams, players</b><span>Games by day with live scores, standings and playoff brackets, head-to-head records, rosters, team and player statistics, search.</span></li>
+        <li><b>Favourites, notifications and widget</b><span>Favourite leagues and teams, reminders before tip-off and final-score notifications for teams whose bell you have turned on, the favourite games widget.</span></li>
+        <li><b>“Arena”: quiz and predictions</b><span>A quiz on past games and predictions of upcoming games for virtual points and titles — section 6.</span></li>
+        <li><b>Odds to win</b><span>Reference pre-game bookmaker odds on the game screen where this feature is available — section 5.</span></li>
+        <li><b>Backup</b><span>Saving settings, favourites, quiz data and predictions to a file and loading them from a file — section 9.</span></li>
+        <li><b>Ads and supporting the project</b><span>Ad banners in lists (section 7) and the voluntary “Support the project” transfer (section 8).</span></li>
+      </ul>
+      <p class="muted">The set of features depends on the App version, the store and your country. The Developer can turn some features on and off remotely — section 9.</p>
+    </div>
+
+    <h2 id="s3">3. Licence and rules of use</h2>
+    <div class="card">
+      <h3>3.1. Licence</h3>
+      <p>The Developer grants you a non-exclusive, free-of-charge, non-transferable licence to install and use the App on Android devices that you own or control, for personal, non-commercial purposes. The licence is worldwide and lasts as long as you comply with the Terms and the Developer distributes the App.</p>
+      <p>The App is licensed, not sold. All exclusive rights to the App — its code, design, texts, illustrations, the BasketSnap name and logo — belong to the Developer. The Terms transfer none of these rights to you other than the licence expressly stated.</p>
+    </div>
+    <div class="card">
+      <h3>3.2. What you must not do</h3>
+      <p>When using the App you agree not to do any of the following, except where applicable law expressly permits it (for example, decompilation for interoperability within the limits set by law):</p>
+      <ul>
+        <li>copy, modify, decompile or disassemble the App, create derivative works from it, or extract its source code, service access keys or other embedded data;</li>
+        <li>distribute, sell, rent out or sublicense the App, or pass it off as your own;</li>
+        <li>access the Developer's server (<code>api.basket-snap.ru</code>) or the services the App uses other than through the App itself, by automated means, or with a load that disrupts the App for other people;</li>
+        <li>interfere with the display of ads in the App: replace or hide them by modifying the App, or inflate impressions and clicks;</li>
+        <li>use data obtained through the App for bulk collection, resale or building competing services;</li>
+        <li>use the App to break the law, infringe the rights of others or violate the rules of the store you installed it from.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>3.3. Third-party components</h3>
+      <p>The App uses libraries and fonts by other authors under their own licences; the Oswald and Onest fonts are licensed under the SIL Open Font License 1.1. The Terms do not restrict any rights those licences grant you directly.</p>
+    </div>
+
+    <h2 id="s4">4. Game data, logos and links</h2>
+    <div class="card">
+      <h3>4.1. Data source</h3>
+      <p>The App receives schedules, results, statistics, standings and odds from API-Basketball (API-SPORTS), a third-party service, and shows them as received, adjusted to your time zone and language. The Developer does not create this data and cannot verify every record: information may arrive late, be incomplete or wrong, and games may be postponed or cancelled. Live scores update at intervals and may lag behind the broadcast.</p>
+      <p>Do not rely solely on the App's data where a mistake could be costly — when buying tickets, planning trips or making decisions involving money. Check important details against the official sources of the leagues and clubs.</p>
+    </div>
+    <div class="card">
+      <h3>4.2. Names and logos</h3>
+      <p>The names of leagues, competitions and clubs, their logos and emblems, and country flags belong to their respective owners and are used in the App solely to identify the competitions and teams concerned. The App is not affiliated with, sponsored by or endorsed by the NBA, EuroLeague, FIBA, the VTB United League, national federations, clubs or any other organisation whose games it shows.</p>
+      <p>If you are a rights holder and believe that material in the App infringes your rights, write to <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>: the Developer will look into it and remove the material if necessary.</p>
+    </div>
+    <div class="card">
+      <h3>4.3. External links and sharing</h3>
+      <p>Some features open third-party websites and apps: a club's ticket page, the Telegram chat, the YooMoney page, the App's page in the store. These resources do not belong to the Developer, who is not responsible for their content, operation or terms — their own rules apply there.</p>
+      <p>The “Share” feature composes a text or an image with the game's details and passes it to the app you choose. What you send, and to whom, is up to you.</p>
+    </div>
+
+    <h2 id="s5">5. Odds to win</h2>
+    <div class="card">
+      <p>On the screen of an upcoming game the App may show odds to win for each team — the median of the pre-game odds of several bookmakers from API-Basketball data. This is reference information about how the market rates the teams' chances, and nothing more:</p>
+      <ul>
+        <li>the Developer is not a bookmaker, does not accept bets, does not pay out winnings and is not affiliated with any betting company;</li>
+        <li>the odds are not a recommendation to bet, a prediction of the result or financial advice; they may have changed since they were received and do not match the odds of any particular bookmaker;</li>
+        <li>gambling is regulated by the law of your country and is generally prohibited for minors; the decision to gamble, and its consequences, are yours alone;</li>
+        <li>in some countries the odds are not shown, and the Developer may disable them at any time.</li>
+      </ul>
+    </div>
+
+    <h2 id="s6">6. Quiz and predictions</h2>
+    <div class="card">
+      <p>The “Arena” tab is a game played for fun: a quiz on past games and predictions of upcoming games (who will win and by how many points). Correct answers and predictions earn virtual points, and points earn titles.</p>
+      <ul>
+        <li><b>No money.</b> Participation is free; there are no stakes, entry fees, prizes or winnings. Points and titles have no monetary value, are not property, currency or bonuses, and cannot be exchanged, transferred or redeemed. This is not gambling or a lottery.</li>
+        <li><b>The rules are in the App.</b> How many points a correct outcome, an exact margin and a streak earn, and when a prediction is void (game cancelled or postponed, forfeit or technical result, tie in regulation, no result in time), is shown on the prediction screen and on the “Arena” tab. The Developer may change the rules and titles in new versions of the App.</li>
+        <li><b>Results come from API-Basketball.</b> A prediction is settled against the game result received from the data source (section 4) when the App is open or refreshing data. An error or delay at the source may affect the settlement; settled predictions are not reviewed manually.</li>
+        <li><b>Stored on your device.</b> Points, history and titles are kept on your device and in your backup (section 9). Uninstalling the App without a backup deletes them for good; they move to another device only via a backup.</li>
+        <li><b>No compensation.</b> Because points and titles have no monetary value, no compensation is provided for their loss, change or recalculation. The Developer fixes a scoring error, once found, in a new version of the App.</li>
+      </ul>
+    </div>
+
+    <h2 id="s7">7. Advertising</h2>
+    <div class="card">
+      <p>The App is funded by advertising: banners from the Yandex Advertising Network and VK Ads (through Yandex mediation) may appear in lists of games, competitions and standings and on the game screen. Ads are labelled and shown in a separate block of the ad SDK; they are not embedded in the App's content.</p>
+      <ul>
+        <li>Ad content is determined by advertisers and ad networks. The Developer does not pick individual ads and is not responsible for the goods, services and websites they promote; when you tap an ad you leave the App and act under the advertiser's rules.</li>
+        <li>What data the ad networks receive is described in the <a href="../../en/">Privacy Policy</a>. In the European Economic Area, the United Kingdom and Switzerland ads are shown without personalization.</li>
+        <li>The Developer may change the number, placement and networks of ads and may disable them. There is no ad-free version; interfering with ads is prohibited (section 3.2).</li>
+        <li>If an ad breaks the law or the ad network's rules, report it through the menu on the banner itself or to the Developer by email.</li>
+      </ul>
+    </div>
+
+    <h2 id="s8">8. Supporting the project</h2>
+    <div class="card">
+      <p>The “Support the project” button in Settings opens the Developer's page on YooMoney (NBCO YooMoney LLC), where you can transfer any amount.</p>
+      <ul>
+        <li>A transfer is a voluntary gift, not payment for goods or services. It unlocks no extra features, does not remove ads and grants no rights to the App or to special support: the App's features are the same for everyone.</li>
+        <li>YooMoney processes the transfer under its own rules and fees; the App receives none of your payment details. A completed transfer is refunded only where the law requires it; for questions about a transfer, write to the Developer.</li>
+        <li>Supporting the project is not an investment, a pre-order or a promise of particular features in the future.</li>
+      </ul>
+    </div>
+
+    <h2 id="s9">9. Updates, remote settings and data</h2>
+    <div class="card">
+      <ul>
+        <li><b>Updates.</b> New versions are released through the store you installed the App from and are installed by the store according to your auto-update settings. The App may suggest an update and, if an old version has stopped working correctly, may require one before it continues. The Developer recommends using the current version.</li>
+        <li><b>Remote settings.</b> The Developer can turn some features — ads, odds, the quiz and predictions, update prompts — on and off and configure them remotely, without releasing a new version, for example when the data source fails or the law changes. Your predictions and settings stay on your device.</li>
+        <li><b>Changes and discontinuation.</b> The Developer may change, add and remove features, change the design, data sources and service providers, and may stop distributing and supporting the App, announcing this in the App's store description or on this page. Old versions may stop working when the services they depend on change.</li>
+        <li><b>Backup.</b> The App saves a copy of your settings, favourites, quiz data and predictions to a file you choose and, with auto-save on, updates that file once a day when opened. The file is yours: where it is kept and who can read it is up to you. Loading a copy replaces your data or merges it with the current data, as you choose; loading cannot be undone.</li>
+        <li><b>Background activity.</b> For notifications about your favourite teams' games and for the widget, the App itself, without being opened, requests schedules and results; this uses data and battery within the limits Android imposes. You can turn this off with the bell, in the App's settings or by removing the widget.</li>
+      </ul>
+    </div>
+
+    <h2 id="s10">10. Warranties and liability</h2>
+    <div class="card">
+      <p>The App is free and is provided “as is” and “as available”. To the extent permitted by law, the Developer does not warrant that the App will run without interruptions or errors on every device, that game data will be complete, accurate and timely, or that features will be available at all times. The third-party services the App depends on — API-Basketball, Firebase, app stores, ad networks, YooMoney, Telegram, linked websites — operate under their own rules and may be unavailable.</p>
+      <p>To the extent permitted by law, the Developer is not liable for lost profits or indirect losses, for decisions made on the basis of the App's data (including bets and purchases), for the loss of data on your device or of a backup file, for the content of ads and third-party resources, or for the operation of stores and other third-party services. Where the Developer is nevertheless liable, that liability is limited to actual damage.</p>
+      <p>Nothing in the Terms limits or excludes liability that cannot be limited by law — including for wilful misconduct and gross negligence and for death or personal injury — or takes away the rights granted to you by the mandatory consumer protection rules of your country (section 11).</p>
+      <p>You are responsible for complying with the Terms and the law when using the App, and for what you share through it.</p>
+    </div>
+
+    <h2 id="s11">11. Consumers in the EEA and the UK</h2>
+    <div class="card">
+      <p>If you use the App as a consumer in a country of the European Economic Area or in the United Kingdom, the Developer is the trader offering the App within the meaning of consumer protection law, and the app store is the platform through which the App is distributed. The Developer confirms that the App is offered in compliance with applicable law.</p>
+      <ul>
+        <li>You keep all rights granted to you by the mandatory consumer protection rules of your country, including the rules on the conformity of digital content and digital services (in the EU, Directive (EU) 2019/770 as implemented nationally; in the UK, the Consumer Rights Act 2015) and on the updates needed to keep the App in conformity. The Terms do not limit these rights.</li>
+        <li>The App is provided free of charge and is available immediately after installation; there are no payments to refund. If a right of withdrawal applies to you, you can exercise it by uninstalling the App and notifying the Developer by email.</li>
+        <li>If the App does not match its description or does not work, write to the Developer, who will try to remedy the defect within a reasonable time by an update or otherwise.</li>
+        <li>The Developer is neither obliged nor willing to take part in dispute resolution proceedings before a consumer alternative dispute resolution body, but is ready to resolve issues directly: <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>, response time 10 working days.</li>
+      </ul>
+    </div>
+
+    <h2 id="s12">12. Ending your use</h2>
+    <div class="card">
+      <p>You can stop using the App at any time by uninstalling it from your device. The App's data on the device is deleted with it, except for a backup file you saved yourself (section 6 of the Privacy Policy).</p>
+      <p>The Developer may restrict or end your right to use the App if you materially breach the Terms, for example by bypassing the App to access the Developer's server or by interfering with ads. The App has no accounts, so such measures take the form of technical restrictions on access to the Developer's services. Sections 3, 4, 10 and 13 survive termination.</p>
+    </div>
+
+    <h2 id="s13">13. Governing law and disputes</h2>
+    <div class="card">
+      <p>The Terms are governed by the law of the Russian Federation. If you are a consumer living in another country, this does not deprive you of the protection of the mandatory rules of the law of your country of residence, or of the right to bring proceedings in the courts of your place of residence where the law allows it.</p>
+      <p>Send complaints and disputes to the Developer first at <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a>: most questions are resolved by correspondence. If no agreement is reached, the dispute is decided by a court in accordance with applicable law.</p>
+      <p>If any provision of the Terms is found invalid, the remaining provisions continue to apply.</p>
+    </div>
+
+    <h2 id="s14">14. Changes to these Terms</h2>
+    <div class="card">
+      <p>The Developer may change the Terms when the App's features, the law or the requirements of stores or service providers change. A new version is published at this address with the date of the change shown at the top of the page; the Developer also announces material changes in the description of the new App version in the store. The current version is always available at <a href="https://robilko.github.io/legal/basketsnap/terms/en/">robilko.github.io/legal/basketsnap/terms/en</a>.</p>
+      <p>By continuing to use the App after a new version is published, you accept it. If you do not agree with the changes, stop using the App and uninstall it.</p>
+    </div>
+
+    <h2 id="s15">15. Contact</h2>
+    <div class="card contact">
+      <p><strong>Developer:</strong> Aleksandr Aleksandrovich Robilko, self-employed<br>
+      <strong>Email:</strong> <a href="mailto:sasha.robson@yandex.ru">sasha.robson@yandex.ru</a><br>
+      <strong>Chat:</strong> <a href="https://t.me/basket_snap" rel="noopener noreferrer">t.me/basket_snap</a><br>
+      <strong>Response time:</strong> 10 working days</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Data processing is described in the <a href="../../en/">Privacy Policy</a>. If the Russian and English versions differ, the <a href="../" hreflang="ru" lang="ru">Russian version</a> prevails.</p>
+    <p>Oswald and Onest fonts are licensed under the SIL Open Font License 1.1: <a href="../../fonts/Oswald-OFL.txt">Oswald</a>, <a href="../../fonts/Onest-OFL.txt">Onest</a>.</p>
+    <p>© 2026 Aleksandr Aleksandrovich Robilko</p>
+  </footer>
+
+</div>
+</body>
+</html>
