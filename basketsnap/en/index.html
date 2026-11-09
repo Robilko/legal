@@ -172,7 +172,7 @@
       <p class="sub">Android app · <code>ru.robilko.basket_snap</code></p>
       <dl class="facts">
         <div><dt>Effective from</dt><dd>September 26, 2026</dd></div>
-        <div><dt>Last updated</dt><dd>October 28, 2026</dd></div>
+        <div><dt>Last updated</dt><dd>November 8, 2026</dd></div>
       </dl>
     </section>
 
@@ -182,7 +182,7 @@
         <li>BasketSnap has no sign-up, accounts, analytics or payments. The App does not request your location.</li>
         <li>To show games, the App calls API-Basketball and downloads logos. These services see your device's IP address, and API-Basketball also sees your search text. In Russia, API-Basketball requests go through the developer's server. API-Basketball then sees the server's address instead of your device's; the server itself stores neither IP addresses nor request contents.</li>
         <li>The widget and game notifications work on your device, with no notification server. To stay current, the App itself, without being opened, asks API-Basketball for the day's games: for the widget once a day at night and when you tap “Refresh”, for notifications only for teams whose bell you have turned on.</li>
-        <li>Settings, favourites, reminders and quiz results stay on your device. The App saves a copy of your settings, favourites and quiz data to a file only if you choose that file yourself; the copy is not sent to the developer.</li>
+        <li>Settings, favourites, reminders, quiz results and your game predictions stay on your device. The App saves a copy of your settings, favourites, quiz data and predictions to a file only if you choose that file yourself; the copy is not sent to the developer.</li>
         <li>Firebase (Google) provides the App's settings and a names directory, and Tracer (VK) receives crash reports. For this, they get technical data about the device and the App.</li>
         <li>To offer a new version, the App asks the store you installed it from — Google Play, RuStore or Huawei AppGallery — when you open it. The store receives the App's name and version and technical data about the device, and the RuStore and Huawei SDKs also send statistics on their own operation. The store itself downloads and installs the update.</li>
         <li>In lists of games, competitions and standings the App may show ads from the Yandex Advertising Network and VK Ads. Their SDKs receive the device advertising ID, the IP address and technical data about the device and the App. In the European Economic Area, the UK and Switzerland ads are shown without personalization.</li>
@@ -325,14 +325,15 @@
         <li>Team notifications: which favourite teams have the bell turned on, the schedule of upcoming notifications and which ones have already been shown.</li>
         <li>Widget: a snapshot of the day's games — all games of the day from the API response, with your favourites picked out when it is shown: time, teams, league, score, logo addresses — and the time of the last update.</li>
         <li>Quiz: personal statistics (record, number of rounds played, answers and correct answers, best streak), the history of the last 20 rounds — league, season, chosen team and player, level, result and finish time — and the last “Custom round” choice: the league with its logo address, season and level.</li>
+        <li>Game predictions (the “Arena” tab): for each prediction — the game, league and teams with their names and logo addresses, the picked winner and score margin, the time the prediction was made and changed, the final score, the points awarded or the reason the prediction was not counted; overall statistics — points total, streak of correct outcomes, number of settled, correct and exact predictions, the rank reached. Predictions involve no money, bets or prizes.</li>
         <li>Service data: a counter of background requests for the day, which limits usage.</li>
         <li>Updates: which version the App last offered to install and when — so it is offered at most once every 3 days. In the RuStore and AppGallery builds, the store's SDK keeps its settings, service identifiers and event queue in the App's folder.</li>
         <li>Cache: API responses (up to 100 entries, from 5 minutes to a day; they contain search text), logos and flags (up to 250 MB), the countries directory, a copy of the names directory.</li>
         <li>Firebase and Tracer installation IDs.</li>
         <li>Ads: the Yandex and VK SDKs keep their settings, service identifiers and temporary ad files in the App's folder.</li>
       </ul>
-      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, language, favourites, quiz data and directories to your Google account. Everything else — the API response cache, the widget snapshot, notification data, the auto-save setting, information about offered updates, installation IDs and third-party SDK data — is excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
-      <p><strong>Backup to a file.</strong> In “Settings → Backup”, at your command, the App saves the settings, language, favourite leagues and teams with their bells and quiz data to a file you choose yourself — in phone storage or a cloud folder; the file has no cache, directories or installation IDs. With “Auto-save” on, the App overwrites this file once a day when you open it and keeps the file's address and the time of the last save on your device. “Restore from file” reads only the file you pick. The file is not sent to the developer.</p>
+      <p>This data is not sent to the developer. If Android backup is turned on, the system may save the settings, language, favourites, quiz data, game predictions and directories to your Google account. Everything else — the API response cache, the widget snapshot, notification data, the auto-save setting, information about offered updates, installation IDs and third-party SDK data — is excluded from the backup. You manage the backup in Android settings; the developer has no access to it.</p>
+      <p><strong>Backup to a file.</strong> In “Settings → Backup”, at your command, the App saves the settings, language, favourite leagues and teams with their bells, quiz data and game predictions with their statistics to a file you choose yourself — in phone storage or a cloud folder; the file has no cache, directories or installation IDs. With “Auto-save” on, the App overwrites this file once a day when you open it and keeps the file's address and the time of the last save on your device. “Restore from file” reads only the file you pick. The file is not sent to the developer.</p>
     </div>
 
     <div class="card">
@@ -427,7 +428,7 @@
         <li>The App contacts API-Basketball (directly and through the developer's server), Firebase and Tracer over HTTPS; images are loaded over HTTPS too — Android does not open unencrypted addresses.</li>
         <li>Ads are shown in the ad SDK's view inside the App; they have no access to the settings, favourites or other App data. The SDKs exchange data with the ad networks' servers themselves.</li>
         <li>New versions are downloaded and installed by the store you installed the App from; the App itself does not download or install update files.</li>
-        <li>Data on your device is kept in the App's folder, which other apps cannot access. The backup file stays where you saved it, and apps with access to that folder can read it; it contains no passwords or keys — only settings, favourites and quiz data.</li>
+        <li>Data on your device is kept in the App's folder, which other apps cannot access. The backup file stays where you saved it, and apps with access to that folder can read it; it contains no passwords or keys — only settings, favourites, quiz data and game predictions.</li>
         <li>Logs with request contents are written only in debug builds, never in published versions.</li>
         <li>No method of transmitting or storing data is completely secure.</li>
       </ul>
